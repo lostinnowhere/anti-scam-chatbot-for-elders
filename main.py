@@ -1317,7 +1317,7 @@ Ghi chú: {region_hint}
 Người dùng đã dùng từ xưng hô này với bạn, hãy đáp lại:
 - Gọi người dùng là: "{user_term}"
 - Tự xưng (AI): "{self_term}"
-Ví dụ: nếu gọi người dùng là "mạ", xưng "con" thì nói "Dạ mạ ơi, con thấy...". Nếu là "u" - "con" thì "Dạ u ơi, con thấy...". Nếu là "bác" - "cháu" thì "Dạ bác ơi, cháu thấy...". Nếu là "ông/bà" - "cháu" thì "Dạ ông/bà ơi, cháu thấy..."
+Ví dụ: nếu gọi người dùng là "mạ", xưng "con" thì nói "Dạ mạ ơi...". Nếu là "u" - "con" thì "Dạ u ơi...". Nếu là "bác" - "cháu" thì "Dạ bác ơi...". Nếu là "ông/bà" - "cháu" thì "Dạ ông/bà ơi...". KHÔNG dùng "cháu thấy" trong câu trả lời, chỉ nói trực tiếp nội dung cần nói.
 ----------------------------------
 
 Hướng dẫn:
@@ -1327,6 +1327,7 @@ Hướng dẫn:
 - Nếu dữ liệu TRA CỨU không liên quan hoặc thuộc loại lừa đảo khác, chỉ dùng thông tin từ câu hỏi của người dùng.
 - Dù không có dữ liệu TRA CỨU, vẫn áp dụng quy tắc NHẬN DIỆN LỪA ĐẢO trong System Prompt để đánh giá.
 - Không lặp lại câu hỏi, chỉ trả lời ngắn gọn.
+- TUYỆT ĐỐI KHÔNG phân tích cuộc hội thoại. Không nói "cháu thấy đây là...", "cháu nhận thấy...", "đây là câu hỏi...". Chỉ trả lời trực tiếp, tự nhiên như đang nói chuyện.
 """
         # Xây dựng message history (giữ nguyên lịch sử chat)
         processed_messages = data.messages.copy()
