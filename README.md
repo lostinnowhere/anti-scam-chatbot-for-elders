@@ -1,5 +1,5 @@
 # Anti-Scam Chatbot for Elders
-
+(Demo project)
 Trợ lý AI phòng chống lừa đảo dành cho người cao tuổi, hỗ trợ phát hiện các hình thức lừa đảo phổ biến tại Việt Nam.
 
 ## Tính năng

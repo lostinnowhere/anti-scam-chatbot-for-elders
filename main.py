@@ -1106,11 +1106,6 @@ def get_home():
     try:
         with open("templates/index.html", "r", encoding="utf-8") as f:
             html = f.read()
-            # Tự động inject phiên bản vào title
-            html = html.replace(
-                "Trợ Lý Phòng Chống Lừa Đảo",
-                "Trợ Lý Phòng Chống Lừa Đảo (v2)"
-            )
             return html
     except FileNotFoundError:
         return HTMLResponse(
