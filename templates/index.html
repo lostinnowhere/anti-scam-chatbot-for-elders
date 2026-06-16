@@ -196,6 +196,15 @@
         .chat-header-title span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .status-indicator { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--success); font-weight: 500; flex-shrink: 0; }
         .status-dot { width: 10px; height: 10px; background-color: var(--success); border-radius: 50%; }
+        .new-chat-header-btn {
+            display: none; align-items: center; gap: 8px; font-size: 14px;
+            color: var(--success); font-weight: 600; flex-shrink: 0;
+            background: transparent; border: none; cursor: pointer;
+            padding: 10px 14px; border-radius: 10px; transition: all 0.2s;
+            min-width: 48px; min-height: 48px;
+        }
+        .new-chat-header-btn:hover { background: var(--bg-color); color: #15803d; }
+        .new-chat-header-btn i { font-size: 16px; }
 
         .chat-container {
             flex: 1; padding: 24px 28px; overflow-y: auto;
@@ -323,6 +332,7 @@
             .hamburger-btn { display: flex; }
 
             .status-indicator { display: none; }
+            .new-chat-header-btn { display: flex; }
 
             .chat-header { padding: 10px 12px; }
             .chat-header-title { font-size: 16px; gap: 10px; }
@@ -387,6 +397,9 @@
                     <span>Trợ Lý Phòng Chống Lừa Đảo</span>
                 </div>
                 <div class="status-indicator"><div class="status-dot"></div>Kết nối an toàn</div>
+                <button class="new-chat-header-btn" onclick="createNewChat()" title="Cuộc trò chuyện mới">
+                    <div class="status-dot"></div><span>Mới</span>
+                </button>
             </div>
 
             <div class="chat-container" id="chatContainer"></div>
