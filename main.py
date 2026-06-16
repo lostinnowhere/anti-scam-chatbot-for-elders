@@ -1350,6 +1350,7 @@ Hướng dẫn:
 - Nếu người dùng nói về người thân nhờ chuyển tiền, dữ liệu TRA CỨU KHÔNG liên quan, bỏ qua nó.
 - Không lặp lại câu hỏi, chỉ trả lời ngắn gọn.
 - TUYỆT ĐỐI KHÔNG phân tích cuộc hội thoại. Không nói "cháu thấy đây là...", "cháu nhận thấy...".
+- KHÔNG nhắc đến "chuyển tiền", "lừa đảo" hay khái niệm lừa đảo nào nếu người dùng không nhắc đến trước.
 """
         # Xây dựng message history (giữ nguyên lịch sử chat)
         processed_messages = data.messages.copy()
