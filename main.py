@@ -247,8 +247,9 @@ def word_boundary_replace(text: str, old: str, new: str) -> str:
 
 def word_boundary_replace_dialect(text: str, old: str, new: str) -> str:
     """
-    Giống word_boundary_replace nhưng nếu từ viết hoa (tên riêng "Chi"),
-    vẫn thay thế nội dung nhưng giữ nguyên kiểu viết hoa của chữ cái đầu.
+    Giống word_boundary_replace nhưng xử lý từ viết hoa:
+    - Nếu từ ở đầu câu (position 0), vẫn chuẩn hóa, giữ nguyên chữ hoa đầu.
+    - Nếu từ viết hoa ở giữa câu, bỏ qua (tên riêng).
     """
     pattern = re.compile(
         r'(^|[\s,.;:!?\"\'()\[\]{}])' + re.escape(old) + r'($|[\s,.;:!?\"\'()\[\]{}])',
@@ -261,11 +262,15 @@ def word_boundary_replace_dialect(text: str, old: str, new: str) -> str:
         word_end = m.end() - len(m.group(2))
         matched_word = text[word_start:word_end]
         if matched_word and matched_word[0].isupper():
-            # Giữ nguyên chữ hoa đầu từ, vẫn chuẩn hóa nội dung
-            result.append(text[last_end:m.start()])
-            result.append(m.group(1))
-            result.append(new[0].upper() + new[1:])
-            result.append(m.group(2))
+            if m.start() == 0:
+                # Đầu câu: chuẩn hóa, giữ nguyên chữ hoa
+                result.append(text[last_end:m.start()])
+                result.append(m.group(1))
+                result.append(new[0].upper() + new[1:])
+                result.append(m.group(2))
+            else:
+                # Giữa câu: bỏ qua (tên riêng)
+                result.append(text[last_end:m.end()])
         else:
             result.append(text[last_end:m.start()])
             result.append(m.group(1))
