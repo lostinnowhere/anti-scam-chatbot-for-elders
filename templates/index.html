@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Trợ Lý Phòng Chống Lừa Đảo</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,11 +27,12 @@
             --success: #38a169;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --sidebar-width: 300px;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); display: flex; height: 100vh; overflow: hidden; }
-        .app-container { display: flex; width: 100%; height: 100%; }
+        body { background-color: var(--bg-color); display: flex; height: 100dvh; overflow: hidden; }
+        .app-container { display: flex; width: 100%; height: 100dvh; }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -39,13 +40,21 @@
         ::-webkit-scrollbar-thumb:hover { background: #a0aec0; }
 
         .sidebar {
-            width: 300px;
+            width: var(--sidebar-width);
             background: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             padding: 16px;
         }
+
+        .sidebar .close-sidebar {
+            display: none;
+            background: transparent; border: none;
+            color: var(--text-muted); cursor: pointer;
+            font-size: 18px; padding: 4px; align-self: flex-end;
+        }
+        .sidebar .close-sidebar:hover { color: var(--text-main); }
 
         .brand {
             display: flex;
@@ -70,6 +79,7 @@
             background: var(--primary-gradient);
             color: white;
             border: none;
+            min-height: 44px;
             padding: 11px;
             border-radius: 10px;
             cursor: pointer;
@@ -133,6 +143,7 @@
             border-radius: 6px;
             opacity: 0;
             transition: all 0.15s;
+            min-width: 32px; min-height: 32px;
         }
         .history-item:hover .delete-btn { opacity: 1; }
         .delete-btn:hover { color: var(--danger); background: #fff5f5; }
@@ -142,25 +153,47 @@
             background: transparent; color: var(--text-secondary); border: 1px solid var(--border-color);
             padding: 10px; border-radius: 10px; cursor: pointer; font-size: 13px; font-weight: 500;
             display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; transition: all 0.2s;
+            min-height: 44px;
         }
         .export-btn:hover { background: #f7fafc; color: var(--text-main); border-color: var(--text-muted); }
 
-        .chat-area { flex: 1; display: flex; flex-direction: column; background: var(--bg-color); }
+        .chat-area { flex: 1; display: flex; flex-direction: column; background: var(--bg-color); min-width: 0; }
         .chat-header {
             background: var(--chat-bg); padding: 14px 24px;
             border-bottom: 1px solid var(--border-color);
             display: flex; align-items: center; justify-content: space-between;
+            gap: 8px;
         }
+        .hamburger-btn {
+            display: none; background: transparent; border: none;
+            color: var(--text-secondary); cursor: pointer;
+            width: 40px; height: 40px; border-radius: 8px;
+            align-items: center; justify-content: center;
+            flex-shrink: 0; transition: background 0.15s;
+        }
+        .hamburger-btn:hover { background: var(--bg-color); }
+
+        .sidebar-overlay {
+            display: none;
+            position: fixed; inset: 0; z-index: 90;
+            background: rgba(0,0,0,0.4);
+            opacity: 0; transition: opacity 0.2s;
+        }
+        .sidebar-overlay.open { display: block; opacity: 1; }
+
         .chat-header-title {
             display: flex; align-items: center; gap: 10px;
             font-weight: 600; color: var(--text-main); font-size: 15px;
+            flex: 1; min-width: 0;
         }
-        .status-indicator { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--success); }
+        .chat-header-title span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .status-indicator { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--success); flex-shrink: 0; }
         .status-dot { width: 7px; height: 7px; background-color: var(--success); border-radius: 50%; }
 
         .chat-container {
             flex: 1; padding: 20px 24px; overflow-y: auto;
             display: flex; flex-direction: column; gap: 12px;
+            overscroll-behavior: contain;
         }
 
         .message {
@@ -201,9 +234,10 @@
         .prompt-chip {
             background: white; color: var(--text-secondary);
             border: 1px solid var(--border-color);
-            padding: 8px 14px; border-radius: 20px;
+            padding: 10px 16px; border-radius: 20px;
             cursor: pointer; font-size: 13px; font-weight: 500;
             transition: all 0.2s; box-shadow: var(--shadow-sm);
+            min-height: 44px;
         }
         .prompt-chip:hover {
             background: var(--primary-light); color: var(--primary);
@@ -219,6 +253,7 @@
         .input-container {
             background: var(--chat-bg); padding: 16px 24px 20px;
             border-top: 1px solid var(--border-color);
+            padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
         }
         .input-box-wrapper {
             display: flex; background: var(--bg-color);
@@ -234,22 +269,23 @@
         }
         .input-box-wrapper input {
             flex: 1; border: none; background: transparent;
-            outline: none; font-size: 15px; color: var(--text-main);
+            outline: none; font-size: 16px; color: var(--text-main);
         }
         .input-box-wrapper input::placeholder { color: var(--text-muted); }
         
         .mic-btn {
             background: transparent; color: var(--text-secondary);
-            border: none; width: 40px; height: 40px; border-radius: 50%;
+            border: none; width: 44px; height: 44px; border-radius: 50%;
             cursor: pointer; display: flex; align-items: center;
             justify-content: center; transition: all 0.2s;
+            flex-shrink: 0;
         }
         .mic-btn:hover { background: #e2e8f0; color: var(--text-main); }
         .mic-btn.recording { background: var(--danger); color: white; animation: pulse 1.5s infinite; }
         
         .send-btn {
             background: var(--primary-gradient); color: white;
-            border: none; width: 40px; height: 40px; border-radius: 50%;
+            border: none; width: 44px; height: 44px; border-radius: 50%;
             cursor: pointer; display: flex; align-items: center;
             justify-content: center; transition: all 0.15s;
             flex-shrink: 0;
@@ -260,12 +296,52 @@
 
         @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                top: 0; left: 0; bottom: 0;
+                z-index: 100;
+                transform: translateX(-100%);
+                transition: transform 0.25s ease;
+                box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+            }
+            .sidebar.open { transform: translateX(0); }
+
+            .sidebar .close-sidebar {
+                display: flex;
+            }
+
+            .hamburger-btn { display: flex; }
+
+            .status-indicator { display: none; }
+
+            .chat-header { padding: 12px 12px; }
+            .chat-header-title { font-size: 14px; gap: 8px; }
+
+            .chat-container { padding: 12px 12px; }
+
+            .message { max-width: 88%; font-size: 15px; }
+
+            .input-container { padding: 10px 12px; padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)); }
+            .input-box-wrapper { padding: 4px 4px 4px 16px; }
+
+            .suggested-prompts { gap: 6px; }
+            .prompt-chip { font-size: 13px; padding: 8px 14px; min-height: 40px; }
+        }
+
+        @media (min-width: 769px) {
+            .hamburger-btn { display: none !important; }
+            .sidebar-overlay { display: none !important; }
+        }
     </style>
 </head>
 <body>
 
     <div class="app-container">
-        <div class="sidebar">
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+        <div class="sidebar" id="sidebar">
+            <button class="close-sidebar" onclick="closeSidebar()"><i class="fa-solid fa-xmark"></i></button>
             <div class="brand">
                 <div class="brand-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <div class="brand-text">
@@ -292,6 +368,9 @@
 
         <div class="chat-area">
             <div class="chat-header">
+                <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
                 <div class="chat-header-title">
                     <i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i>
                     <span>Trợ Lý Phòng Chống Lừa Đảo</span>
@@ -431,6 +510,7 @@
         }
 
         function switchChat(id) {
+            closeSidebar();
             currentChatId = id;
             localStorage.setItem('currentChatId', currentChatId);
             renderHistoryList();
@@ -608,6 +688,16 @@
 
             chatContainer.appendChild(messageDiv);
             chatContainer.scrollTo({ top: chatContainer.scrollHeight, behavior: 'smooth' });
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('open');
+        }
+
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('open');
         }
 
         function exportChatLog() {
