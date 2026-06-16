@@ -332,20 +332,31 @@ def detect_region(text: str) -> str:
     """
     text_lower = text.lower()
 
+    def score_markers(markers: list[str], text: str) -> int:
+        score = 0
+        for m in markers:
+            if " " in m:
+                if m in text:
+                    score += 1
+            else:
+                if re.search(r'\b' + re.escape(m) + r'\b', text):
+                    score += 1
+        return score
+
     # Đặc trưng miền Trung: "mô", "răng", "rứa", "chi rứa", "mạ ơi", ...
     central_markers = ["mô", "răng", "rứa", "chi rứa", "mạ ơi",
                        "đi mô", "về mô", "làm chi", "o ơi"]
-    central_score = sum(1 for m in central_markers if m in text_lower)
+    central_score = score_markers(central_markers, text_lower)
 
     # Đặc trưng miền Nam: "hổng", "hông", "chỉ ơi", "má ơi", "ổng", ...
     south_markers = ["hổng", "hông", "chỉ ơi", "má ơi", "ba ơi",
                      "dzô", "vô đây", "coi chừng", "mắc cỡ", "ổng", "ảnh",
                      "thơm", "bông", "chén", "trái cây"]
-    south_score = sum(1 for m in south_markers if m in text_lower)
+    south_score = score_markers(south_markers, text_lower)
 
     # Đặc trưng miền Bắc: "bố ơi", "mẹ ơi", "bát", "cốc", ...
     north_markers = ["bố ơi", "mẹ ơi", "bát", "cốc"]
-    north_score = sum(1 for m in north_markers if m in text_lower)
+    north_score = score_markers(north_markers, text_lower)
 
     # Tạo danh sách điểm số và sắp xếp giảm dần
     scores = [
@@ -1494,6 +1505,8 @@ def run_tests():
             ("Ổng nói vậy đó, tui hổng biết", "south"),
             ("Mẹ ơi, bát cơm đây ạ", "north"),
             ("Tôi thấy cái bát này bự quá", "north"),
+            ("Mai đi chơi không", "unknown"),
+            ("Cảm ơn bạn", "unknown"),
         ]
 
         for text, expected_region in test_cases:
