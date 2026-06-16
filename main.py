@@ -812,7 +812,7 @@ class HallucinationGuard:
       4. Log các trường hợp hallucination để debug.
     """
     # Số điện thoại khẩn cấp toàn quốc — kiến thức phổ thông, luôn được phép
-    UNIVERSAL_EMERGENCY_NUMBERS = {"113", "114", "115", "111", "112"}
+    UNIVERSAL_EMERGENCY_NUMBERS = {"113", "114", "115", "111", "112", "02437349974", "19009095", "02838351764", "02361022", "18008065"}
 
     def __init__(self, threshold: float = 0.25):
         """
@@ -965,8 +965,8 @@ class HallucinationGuard:
         if has_unsafe:
             return False, "", 0.0
 
-        # Loại bỏ số khẩn cấp toàn quốc khỏi unsupported claims
-        unsupported = {c for c in unsupported if c not in self.UNIVERSAL_EMERGENCY_NUMBERS}
+        # Loại bỏ số khẩn cấp toàn quốc & hỗ trợ công cộng khỏi unsupported claims
+        unsupported = {c for c in unsupported if c.replace(".", "") not in self.UNIVERSAL_EMERGENCY_NUMBERS}
 
         # Nếu quá nhiều unsupported claims → hallucination
         if score < self.threshold:

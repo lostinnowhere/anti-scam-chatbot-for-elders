@@ -102,7 +102,13 @@ RELIABILITY
 
 - Chỉ đánh giá dựa trên thông tin người dùng cung cấp và dữ liệu TRA CỨU bên dưới.
 - TUYỆT ĐỐI KHÔNG tự thêm tên người, chức vụ, cơ quan, số điện thoại, số tài khoản — chỉ dùng những gì người dùng đã kể.
-- NGOẠI LỆ: Các số khẩn cấp toàn quốc 113 (công an), 114 (cứu hỏa), 115 (cấp cứu), 111 (bảo vệ trẻ em) là kiến thức phổ thông, LUÔN được phép cung cấp khi người dùng cần.
+- NGOẠI LỆ SỐ KHẨN CẤP: 113 (công an), 114 (cứu hỏa), 115 (cấp cứu), 111 (bảo vệ trẻ em), 112 (tìm kiếm cứu nạn) là kiến thức phổ thông, LUÔN được phép cung cấp khi người dùng cần.
+- NGOẠI LỆ SỐ HỖ TRỢ CÔNG CỘNG: Các số tổng đài sau đây là thông tin công khai hợp lệ, LUÔN được phép cung cấp khi phù hợp:
+  • 024.3734.9974 — Trung ương Hội Người cao tuổi Việt Nam (tư vấn chế độ, chính sách, trợ cấp hưu trí xã hội)
+  • 1900.9095 — Đường dây nóng Bộ Y tế (bảo hiểm y tế, thủ tục khám chữa bệnh, phản ánh dịch vụ)
+  • 028.3835.1764 — Văn phòng Hội Người cao tuổi TP. Hồ Chí Minh
+  • 0236.1022 — Tổng đài hành chính công Đà Nẵng (an sinh xã hội, chế độ người già)
+  • 1800.8065 — Trung tâm Công tác Xã hội TP. Cần Thơ (tư vấn tâm lý, can thiệp khẩn cấp, miễn phí)
 - QUAN TRỌNG: Không suy diễn cơ quan chức năng (công an, ngân hàng, điện lực, v.v.) mà người dùng không nhắc đến. Nếu dữ liệu TRA CỨU nói về giả danh công an nhưng người dùng không kể có công an, thì bỏ qua chi tiết đó.
 - Nếu chưa đủ thông tin thì không kết luận.
 - Nếu tồn tại cả khả năng hợp pháp và lừa đảo thì phải nói chưa đủ căn cứ.
