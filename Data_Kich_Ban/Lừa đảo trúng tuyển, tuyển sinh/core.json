@@ -1,0 +1,338 @@
+[
+  {
+    "_id": 1,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, chào anh/chị. Em là Minh, nhân viên tuyển sinh của Trường Đại học Công nghệ Thông tin. Em xin phép nói chuyện một chút về hồ sơ xét tuyển của con anh/chị được không ạ?"
+      },
+      {
+        "role": "người nhận",
+        "content": "Ừ, có chuyện gì vậy? Con tôi nộp hồ sơ rồi mà."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ đúng rồi ạ. Hồ sơ của cháu đã qua vòng sơ tuyển, nhưng hiện tại điểm chuẩn của trường năm nay tăng cao ạ. Em gọi để thông báo là nhà trường có chương trình xét tuyển diện đặc cách, chỉ cần đóng một khoản phí hỗ trợ là cháu sẽ được xét trúng tuyển thẳng 100%."
+      },
+      {
+        "role": "người nhận",
+        "content": "Đặc cách gì? Bao nhiêu tiền?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ khoản phí là 25 triệu đồng ạ. Khoản này bao gồm phí làm hồ sơ đặc cách và phí xét duyệt từ hội đồng tuyển sinh. Nếu đóng trong hôm nay, nhà trường còn giảm 20% nữa ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "25 triệu? Sao đắt vậy? Và tôi phải chuyển khoản cho ai?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ khoản phí này là theo quy định của nhà trường ạ. Anh/chị chuyển khoản vào số tài khoản 1903684527008 tại Ngân hàng Techcombank, chủ tài khoản Nguyễn Văn Hoàng. Sau khi chuyển, anh/chị chụp màn hình gửi em để em làm thủ tục xét duyệt ngay ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Nhưng sao em không gọi từ số máy của trường? Số này lạ quá. Để tôi gọi lại cho trường để kiểm tra."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ số này là số hotline tuyển sinh riêng của trường ạ. Nếu anh/chị không nhanh thì suất đặc cách sẽ hết, lúc đó có muốn cũng không được nữa đâu ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Thôi được rồi, để tôi chuyển khoản. Cho tôi số tài khoản lại."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ số tài khoản 1903684527008 Techcombank, chủ tài khoản Nguyễn Văn Hoàng. Nội dung chuyển khoản ghi \"HoTen_PH_25tr\". Sau khi chuyển xong anh/chị nhắn em qua số này em xác nhận ngay ạ."
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, chào anh chị. Tôi là Nguyễn Văn Nam, chuyên viên Trung tâm Dịch vụ Việc làm số 1. Tôi xin phép trao đổi một số thông tin với anh/chị được không?"
+      },
+      {
+        "role": "người nhận",
+        "content": "Dạ, có chuyện gì thế ạ?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Tôi thấy trên hồ sơ anh/chị đang có nhu cầu tìm việc ở vị trí nhân viên hành chính văn phòng. Hiện tại chúng tôi có một vị trí rất tốt tại Tập đoàn Vingroup, mức lương khởi điểm 15-18 triệu, bảo hiểm đầy đủ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Ồ, vị trí đó nghe cũng được đấy. Tôi cần làm gì?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Rất đơn giản. Anh/chị chỉ cần đóng một khoản phí dịch vụ giới thiệu việc làm là 3,5 triệu đồng. Sau đó chúng tôi sẽ sắp xếp lịch phỏng vấn trực tiếp với trưởng phòng nhân sự của tập đoàn, đảm bảo đậu 100%."
+      },
+      {
+        "role": "người nhận",
+        "content": "3,5 triệu? Lỡ không đậu phỏng vấn thì sao?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Anh/chị yên tâm, chúng tôi đã có thỏa thuận với bên doanh nghiệp, chỉ là hình thức thôi. Nếu không đậu, chúng tôi sẽ hoàn lại 100% phí dịch vụ trong vòng 7 ngày làm việc. Anh/chị chuyển khoản đi, em gửi hợp đồng điện tử ngay."
+      },
+      {
+        "role": "người nhận",
+        "content": "Ừm... cũng được. Tôi chuyển khoản cho ai?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ, anh/chị chuyển đến số tài khoản 1018452679 tại Vietcombank, chủ tài khoản Nguyễn Văn Nam. Em gửi qua Zalo hợp đồng và giấy hẹn phỏng vấn cho anh/chị nhé. Anh/chị cho em số Zalo ạ."
+      }
+    ]
+  },
+  {
+    "_id": 3,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, xin chào! Tôi gọi từ Văn phòng Tuyển sinh của Trường Đại học Quốc tế ABC. Con của anh/chị là Nguyễn Văn A có tham gia kỳ thi đánh giá năng lực tháng trước phải không ạ?"
+      },
+      {
+        "role": "người nhận",
+        "content": "Vâng, đúng rồi. Cháu thi được kết quả thế nào?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ kết quả của cháu khá tốt ạ. Tuy nhiên, điểm của cháu thấp hơn điểm chuẩn 1,5 điểm. Nhưng trường có chính sách xét tuyển bổ sung diện \"phỏng vấn năng lực\", nếu anh/chị đóng phí tham gia phỏng vấn là 10 triệu, cháu sẽ được xét trúng tuyển vào ngành Công nghệ thông tin."
+      },
+      {
+        "role": "người nhận",
+        "content": "Phỏng vấn mà mất 10 triệu á? Sao đắt thế?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ khoản phí này bao gồm phí hồ sơ, phí phỏng vấn và phí xét duyệt đầu vào ạ. Nếu trượt phỏng vấn, trường sẽ xem xét hoàn lại 70%."
+      },
+      {
+        "role": "người nhận",
+        "content": "Thế cháu có phải đến trường phỏng vấn không?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ không cần ạ, phỏng vấn online qua Zoom. Sau khi đóng phí, em sẽ gửi link phỏng vấn. Nhưng anh/chị cần đóng phí trước 17h chiều nay để kịp đợt xét duyệt cuối cùng."
+      },
+      {
+        "role": "người nhận",
+        "content": "Để tôi hỏi lại cháu xem thế nào đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ nhanh lên ạ, vì hết đợt này là không còn cơ hội nữa đâu ạ. Anh/chị có thể chuyển khoản qua số tài khoản 1234567890 - Ngân hàng BIDV - chủ tài khoản Nguyễn Thị Hoa. Cảm ơn anh/chị!"
+      }
+    ]
+  },
+  {
+    "_id": 4,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo! Chúc mừng anh/chị! Con của anh/chị vừa trúng tuyển vào trường THPT Chuyên Khoa học Xã hội và Nhân văn - hệ chất lượng cao. Tôi là Minh - nhân viên tuyển sinh của trường."
+      },
+      {
+        "role": "người nhận",
+        "content": "Ồ thật à? Nhưng tôi có nộp đơn cho cháu đâu nhỉ?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ nhà trường xét tuyển dựa trên thành tích học tập cấp 2 và điểm thi của cháu ạ. Cháu nằm trong danh sách ưu tiên xét tuyển thẳng đợt này. Tuy nhiên, để giữ suất, anh/chị cần đóng phí nhập học trước là 5 triệu đồng."
+      },
+      {
+        "role": "người nhận",
+        "content": "5 triệu? Hạn chót đóng khi nào?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ trong 24 giờ tới thôi ạ, vì số lượng suất có hạn và nhiều phụ huynh đang đăng ký. Sau 24h nếu không đóng, suất sẽ được chuyển cho thí sinh khác ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Sao gấp vậy? Để tôi xem xét đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ thực sự gấp lắm ạ. Anh/chị chuyển nhanh vào số tài khoản 2468135790 tại Agribank, chủ tài khoản Nguyễn Văn Tùng, nội dung \"Nop phi nhap hoc + ten hoc sinh\". Sau đó em sẽ gửi mã xác nhận nhập học qua SMS cho anh/chị."
+      },
+      {
+        "role": "người nhận",
+        "content": "Khoan, để tôi tra cứu số điện thoại của trường xem có đúng không đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ, anh/chị cứ kiểm tra nhưng nhanh lên ạ, suất sẽ hết bất cứ lúc nào."
+      }
+    ]
+  },
+  {
+    "_id": 5,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, chào anh. Tôi là cô Hương - giáo viên Trường THPT công lập quận 1. Tôi gọi về việc học bổng của cháu An - học sinh lớp 12A1 của tôi."
+      },
+      {
+        "role": "người nhận",
+        "content": "Dạ vâng, cô Hương đấy ạ? Chuyện học bổng gì thế cô?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Cháu An vừa được Quỹ Khuyến học tài trợ suất học bổng toàn phần du học Nhật Bản trị giá 40.000 USD. Quỹ đã gửi thông báo về trường, và tôi được phân công thông báo cho gia đình."
+      },
+      {
+        "role": "người nhận",
+        "content": "Trời ơi, vui quá cô ơi! Thế gia đình cần làm gì ạ?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ, gia đình cần đóng một khoản phí thủ tục hồ sơ là 8 triệu đồng. Đây là phí xử lý visa, phí dịch thuật và công chứng giấy tờ. Quỹ yêu cầu đóng trước để gấp rút làm thủ tục."
+      },
+      {
+        "role": "người nhận",
+        "content": "8 triệu ạ? Ừm... cũng được, so với 40.000 USD thì không đáng bao nhiêu."
+      },
+      {
+        "role": "người gọi",
+        "content": "Vâng ạ, đúng rồi. Anh chị chuyển khoản vào số tài khoản 3692581470 tại VietinBank, chủ tài khoản Lê Thị Hương. Chuyển xong thì nhắn tin cho tôi qua số này để tôi xác nhận với quỹ và gửi biên nhận điện tử ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Cô ơi, hình như số điện thoại này không phải của cô Hương. Cô cho tôi xin số trường để tôi gọi lại xác nhận."
+      },
+      {
+        "role": "người gọi",
+        "content": "Trời ơi, cô đang dùng số tạm thời vì điện thoại cũ hỏng. Anh không tin thì thôi, mất cơ hội cho cháu thì tội nghiệp. Cô gọi là vì thương cháu chứ có được lợi gì đâu."
+      },
+      {
+        "role": "người nhận",
+        "content": "Thôi được rồi cô, để tôi chuyển."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ cảm ơn anh! Chuyển nhanh kẻo hết hạn nộp hồ sơ nhé!"
+      }
+    ]
+  },
+  {
+    "_id": 6,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, anh/chị có phải là phụ huynh của em Nguyễn Hoàng Nam - học sinh lớp 9 Trường THCS Hoàng Diệu không ạ?"
+      },
+      {
+        "role": "người nhận",
+        "content": "Đúng rồi, tôi là bố cháu. Có chuyện gì?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ em là Tuấn - nhân viên Phòng Đào tạo Sở Giáo dục và Đào tạo TP.HCM. Em gọi để thông báo về việc cháu Nam có nguy cơ bị điểm liệt môn Toán trong kỳ thi tuyển sinh lớp 10 vì phát hiện mang tài liệu vào phòng thi."
+      },
+      {
+        "role": "người nhận",
+        "content": "Sao có thể được? Cháu nó thi xong về bảo làm bài tốt mà!"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ chúng em mới rà soát camera và phát hiện cháu có mang tài liệu. Tuy nhiên, sự việc chưa được lập biên bản chính thức. Nếu anh/chị muốn, em có thể giúp làm \"trôi\" vụ này để điểm thi của cháu vẫn được tính. Phí xử lý là 15 triệu."
+      },
+      {
+        "role": "người nhận",
+        "content": "15 triệu?! Các anh làm thế nào?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ, em có quen biết với giám thị coi thi và người trong hội đồng chấm thi. Nếu anh chị đồng ý, em sẽ sắp xếp hủy đoạn camera và chỉnh sửa biên bản. Chuyển khoản nhanh qua số tài khoản 1903784629001 tại Techcombank, chủ tài khoản Nguyễn Hoàng Tuấn."
+      },
+      {
+        "role": "người nhận",
+        "content": "Thật không? Tôi không thể tin được. Để tôi gọi cho nhà trường kiểm tra đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Anh gọi trường thì mọi chuyện sẽ lộ hết, lúc đó cháu Nam sẽ bị đình chỉ thi và cấm thi năm sau. Em cũng sẽ không giúp được nữa. Anh tự quyết định đi ạ."
+      }
+    ]
+  },
+  {
+    "_id": 7,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, em chào anh/chị. Em là nhân viên tuyển dụng của Công ty Cổ phần Việc làm Nhanh 24/7. Bên em có vị trí nhân viên chăm sóc khách hàng làm việc tại TPHCM, lương cứng 10 triệu cộng hoa hồng, anh/chị có quan tâm không ạ?"
+      },
+      {
+        "role": "người nhận",
+        "content": "Có, tôi đang tìm việc. Tôi cần đáp ứng điều kiện gì?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ công ty yêu cầu anh/chị tham gia một khóa đào tạo ngắn hạn 2 ngày, phí đào tạo là 2 triệu đồng. Sau khi hoàn thành khóa học, anh/chị sẽ được nhận ngay vào làm việc, phí đào tạo sẽ được hoàn lại sau 2 tháng thử việc."
+      },
+      {
+        "role": "người nhận",
+        "content": "Phí đào tạo 2 triệu? Thế học ở đâu?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ học online qua Zoom ạ. Sau khi đóng phí, em gửi tài liệu và link lớp học. Anh/chị chuyển khoản qua số tài khoản 1472583690 tại Sacombank, chủ tài khoản Công ty Cổ phần Việc làm Nhanh 24/7."
+      },
+      {
+        "role": "người nhận",
+        "content": "Tôi thấy hơi nghi nghi. Để tôi tìm hiểu về công ty trước đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ công ty em uy tín, có trụ sở ở quận 1, giấy phép đầy đủ. Nếu anh/chị nhanh chân còn suất, tuần sau là có việc làm ngay. Chậm là mất cơ hội tốt đấy ạ."
+      }
+    ]
+  },
+  {
+    "_id": 8,
+    "dialogue": [
+      {
+        "role": "người gọi",
+        "content": "Alo, chào anh/chị! Con của anh/chị là Nguyễn Minh Anh vừa đạt giải Ba cuộc thi Học sinh Giỏi Quốc gia môn Tiếng Anh. Tôi là đại diện từ Quỹ Hỗ trợ Tài năng trẻ Việt Nam thông báo cháu được nhận học bổng trị giá 50 triệu đồng."
+      },
+      {
+        "role": "người nhận",
+        "content": "Ôi trời, vui quá! Cảm ơn quỹ. Xin hỏi tôi cần làm gì để nhận học bổng ạ?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ đơn giản thôi ạ. Cháu và gia đình sẽ được mời đến dự lễ trao học bổng tại Hà Nội. Các chi phí đi lại, ăn ở đều được quỹ tài trợ. Tuy nhiên, anh/chị cần đóng một khoản phí làm thủ tục xác nhận nhận giải là 2,5 triệu đồng, đây là phí hành chính bắt buộc ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Phí thủ tục 2,5 triệu... Có gì đảm bảo không?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ tất nhiên ạ, chúng tôi sẽ gửi giấy mời chính thức có dấu đỏ của quỹ qua đường bưu điện sau khi anh/chị đóng phí. Anh/chị chuyển khoản vào số tài khoản 5678901234 tại MB Bank, chủ tài khoản Nguyễn Thị Hồng - Quỹ Hỗ trợ Tài năng trẻ Việt Nam."
+      },
+      {
+        "role": "người nhận",
+        "content": "Tôi muốn ghé qua văn phòng quỹ để nộp tiền trực tiếp thì sao?"
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ, văn phòng quỹ hiện đang tạm thời chuyển địa điểm nên không tiếp khách được ạ. Chỉ nhận thanh toán qua chuyển khoản trong thời gian này thôi ạ."
+      },
+      {
+        "role": "người nhận",
+        "content": "Khoan, để tôi kiểm tra thông tin quỹ trên mạng trước đã."
+      },
+      {
+        "role": "người gọi",
+        "content": "Dạ vâng, nhưng nhanh lên ạ vì hạn chót xác nhận là 17h chiều nay."
+      }
+    ]
+  }
+]
