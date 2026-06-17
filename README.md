@@ -69,19 +69,7 @@ Anti-Scam-chatbot/
    ```
 5. Mở trình duyệt: [http://localhost:8000](http://localhost:8000)
 
-### Render (free)
 
-Demo: [https://anti-scam-chatbot-for-elders.onrender.com/](https://anti-scam-chatbot-for-elders.onrender.com/)
-
-1. Push repo lên GitHub
-2. Vào [Render Dashboard](https://dashboard.render.com) → New Web Service
-3. Build: `pip install -r requirements.txt`
-4. Start: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-5. Set environment variables (Render Dashboard → Environment):
-   - `GROQ_API_KEY` — từ [Groq Console](https://console.groq.com)
-   - `OPENROUTER_API_KEY` — từ [OpenRouter](https://openrouter.ai) (optional, fallback)
-
-> **Lưu ý**: Render free tier sẽ ngủ sau 15 phút không hoạt động. Lần truy cập đầu tiên sau giấc ngủ mất 30–50 giây để khởi động lại (cold start).
 
 ## API
 
