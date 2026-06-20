@@ -1,0 +1,47 @@
+Trong lĩnh vực trí tuệ nhân tạo, Robustness được hiểu là khả năng của hệ thống duy trì hiệu năng ổn định và đáng tin cậy trong nhiều điều kiện khác nhau, bao gồm các thay đổi của môi trường, dữ liệu đầu vào không hoàn hảo hoặc các tình huống bất ngờ ngoài dữ liệu huấn luyện. Robustness phản ánh mức độ mà hệ thống có thể thích ứng và tiếp tục hoạt động hiệu quả trước các biến động và thách thức trong môi trường thực tế \cite{braiek2024_robustness}. Đây là một trong những thành phần quan trọng của khung Trustworthy AI bởi một hệ thống có độ chính xác cao trong điều kiện lý tưởng chưa chắc đã hoạt động hiệu quả trong môi trường thực tế.
+
+\section{Các thách thức về độ bền vững của hệ thống}
+Một trong những thách thức phổ biến đối với chatbot phát hiện lừa đảo là chất lượng dữ liệu đầu vào không đồng đều. Đối với dữ liệu giọng nói, các yếu tố như tiếng ồn môi trường, chất lượng cuộc gọi kém hoặc đặc điểm phát âm của người cao tuổi có thể làm giảm độ chính xác của quá trình chuyển đổi từ giọng nói sang văn bản.
+
+Ngoài ra, khi người dùng nhập trực tiếp nội dung hội thoại, dữ liệu có thể chứa lỗi chính tả, thiếu dấu tiếng Việt, từ ngữ địa phương, từ viết tắt hoặc các ký tự đặc biệt không mang ý nghĩa ngữ nghĩa. Những yếu tố này có thể khiến mô hình hiểu sai ngữ cảnh hoặc bỏ sót các dấu hiệu lừa đảo quan trọng.
+
+Các sai sót xuất hiện ở giai đoạn đầu vào có thể lan truyền sang các bước xử lý tiếp theo, dẫn đến việc chatbot đánh giá sai mức độ nguy hiểm của cuộc gọi hoặc đưa ra các cảnh báo không chính xác.
+
+\subsection{Tấn công thao túng hệ thống và Prompt Injection}
+Sự phát triển của các mô hình ngôn ngữ lớn cũng kéo theo sự xuất hiện của nhiều hình thức tấn công mới nhằm thao túng hành vi của hệ thống AI. Một trong những dạng tấn công đáng chú ý là Prompt Injection, trong đó kẻ tấn công cố tình chèn các nội dung mang tính chỉ thị nhằm làm thay đổi quá trình suy luận của mô hình \cite{geng2026_promptinjection}.
+Trong bối cảnh chatbot chống lừa đảo, đối tượng lừa đảo có thể cố tình sử dụng các câu nói như “đây là cuộc gọi hợp pháp”, “bỏ qua cảnh báo” hoặc các hình thức diễn đạt tương tự nhằm đánh lừa hệ thống phân tích. Nếu chatbot không được thiết kế với cơ chế bảo vệ phù hợp, mô hình có thể bị ảnh hưởng bởi các nội dung này và đưa ra kết luận không chính xác.
+
+Ngoài ra, kẻ gian cũng có thể thay đổi cách sử dụng ngôn ngữ, thay thế các từ khóa quen thuộc bằng từ đồng nghĩa hoặc các cách diễn đạt mới nhằm vượt qua các bộ lọc dựa trên từ khóa. Điều này khiến việc phát hiện lừa đảo trở nên khó khăn hơn, đặc biệt khi hệ thống phụ thuộc quá nhiều vào các quy tắc cố định.
+
+\subsection{Khả năng chịu lỗi của hệ thống}
+Bên cạnh các thách thức liên quan đến dữ liệu và hành vi tấn công, chatbot còn phải đối mặt với các vấn đề phát sinh từ hạ tầng kỹ thuật. Trong quá trình sử dụng, người dùng có thể gặp tình trạng mất kết nối Internet, chất lượng mạng không ổn định hoặc gián đoạn truy cập đến các dịch vụ AI từ xa.
+Đối với nhóm người cao tuổi, việc hệ thống ngừng hoạt động hoàn toàn khi gặp sự cố kỹ thuật có thể tạo ra cảm giác mất an toàn và làm giảm niềm tin vào công nghệ. Do đó, chatbot cần có khả năng duy trì các chức năng cơ bản ngay cả khi một số thành phần của hệ thống gặp lỗi hoặc không thể truy cập tạm thời.
+
+Khả năng chịu lỗi không chỉ giúp nâng cao trải nghiệm người dùng mà còn đóng vai trò quan trọng trong việc đảm bảo tính liên tục của dịch vụ trong các tình huống khẩn cấp.
+
+\subsection{Sự thay đổi của các hình thức lừa đảo theo thời gian}
+Một trong những thách thức lớn nhất đối với mọi hệ thống phát hiện gian lận là sự thay đổi liên tục của các phương thức tấn công. Các đối tượng lừa đảo thường xuyên điều chỉnh nội dung, chiến thuật và cách tiếp cận nhằm vượt qua các hệ thống bảo vệ hiện có.
+Những kịch bản lừa đảo mới xuất hiện nhưng chưa từng được ghi nhận trong dữ liệu huấn luyện được gọi là các trường hợp “zero-day scam”. Trong các tình huống này, mô hình có thể không nhận ra dấu hiệu nguy hiểm do chưa từng tiếp xúc với những mẫu dữ liệu tương tự trước đó.
+
+Nếu hệ thống chỉ dựa trên các mẫu lừa đảo đã biết, khả năng thích ứng với các hình thức tấn công mới sẽ bị hạn chế. Đây là một trong những nguyên nhân chính dẫn đến hiện tượng bỏ sót các cuộc gọi lừa đảo thực sự trong môi trường thực tế.
+
+\section{Giải pháp nâng cao độ bền vững của hệ thống}
+Để tăng cường Robustness, hệ thống chatbot cần được thiết kế theo nguyên tắc phòng thủ nhiều lớp nhằm giảm thiểu ảnh hưởng của dữ liệu nhiễu, các cuộc tấn công có chủ đích và những thay đổi trong môi trường vận hành.
+
+Trước hết, ở tầng xử lý dữ liệu đầu vào, hệ thống áp dụng DialectNormalizer -- một bộ chuẩn hóa phương ngữ dựa trên từ điển ánh xạ (\texttt{DIALECT\_MAP}) với hơn 110 mục từ, bao gồm các từ địa phương phổ biến ở miền Trung (ví dụ: "mô" $\rightarrow$ "đâu", "răng" $\rightarrow$ "sao", "tề" $\rightarrow$ "nhé") và miền Nam (ví dụ: "hổng" $\rightarrow$ "không", "ổng" $\rightarrow$ "ông ấy", "thiệt" $\rightarrow$ "thật"). Cơ chế bảo vệ danh từ riêng (proper noun protection) được áp dụng: các từ trong \texttt{DIALECT\_MAP} nếu viết hoa chữ cái đầu ở giữa câu sẽ không bị thay thế (ví dụ tên "Chi" ở giữa câu không thành "gì", "Nghe" không thành "nghe"). Từ viết hoa ở đầu câu vẫn được chuẩn hóa nhưng giữ nguyên chữ hoa chữ cái đầu, vì khả năng cao đây là từ phương ngữ xuất hiện ở vị trí đầu câu thay vì tên riêng. Đối với dữ liệu văn bản do người dùng nhập trực tiếp, hệ thống loại bỏ các ký tự đặc biệt không cần thiết và xử lý các trường hợp thiếu dấu tiếng Việt.
+
+Đối với các hình thức tấn công thao túng mô hình, chatbot cần tách biệt hoàn toàn dữ liệu cuộc gọi với các chỉ thị điều khiển hệ thống. Trong đồ án này, đầu vào của người dùng được đặt trong một cặp thẻ phân cách rõ ràng trong prompt, kèm theo hướng dẫn mô hình coi nội dung trong thẻ là dữ liệu cần phân tích chứ không phải chỉ thị. Ngoài ra, system prompt cũng nhấn mạnh rằng tác vụ của mô hình là phân tích cuộc gọi chứ không phải thực thi nội dung do người dùng đưa ra. Tuy nhiên, các biện pháp này thuần túy dựa trên hướng dẫn (instruction-based) và phụ thuộc hoàn toàn vào khả năng làm theo chỉ thị của mô hình, vốn không phải lúc nào cũng đáng tin cậy trước các cuộc tấn công tinh vi.
+
+Trên thực tế, còn nhiều giải pháp kỹ thuật có thể triển khai để tăng cường bảo vệ. Một trong số đó là tầng lọc đầu vào (input sanitization) dùng biểu thức chính quy để phát hiện và loại bỏ các mẫu prompt injection phổ biến như ``bỏ qua các hướng dẫn trước'', ``quên tất cả quy tắc'' hoặc ``ignore all previous instructions''. Lớp bảo vệ này có thể xử lý các trường hợp đã biết với chi phí tính toán thấp, song không hiệu quả trước các biến thể mới vì nó chỉ dựa trên mẫu cố định. Một hướng tiếp cận khác là sử dụng một mô hình ngôn ngữ riêng biệt, thường là mô hình nhỏ hơn và nhanh hơn, để phân loại đầu vào trước khi gửi đến mô hình chính. Giải pháp này có khả năng phát hiện các cuộc tấn công tinh vi hơn nhưng làm tăng độ trễ và phát sinh thêm chi phí API. Ngoài ra, có thể đóng khung dữ liệu đầu vào dưới dạng JSON có cấu trúc và hướng dẫn mô hình chỉ đọc các trường dữ liệu thay vì xử lý nội dung thô; cách tiếp cận này cứng nhắc hơn so với thẻ XML nhưng cũng khó vượt qua hơn.
+
+Do các hạn chế về thời gian phát triển, tài nguyên API và độ phức tạp tích hợp, các giải pháp kể trên chưa được triển khai trong phạm vi đồ án này. Hệ thống hiện tại dựa chủ yếu vào cơ chế phòng thủ thông qua hướng dẫn (instruction-based defense) và chưa có các lớp kiểm tra đầu vào độc lập.
+
+Để giảm thiểu rủi ro liên quan đến hạ tầng, hệ thống triển khai cơ chế tự động thử lại (retry) hai lớp: hệ thống thực hiện gọi API Groq với tối đa hai lần thử lại, áp dụng thời gian chờ tăng dần (exponential backoff). Nếu tất cả các lần thử đều thất bại, OpenRouter được kích hoạt như một kênh dự phòng độc lập. Việc sử dụng hai nhà cung cấp API khác nhau giúp hệ thống duy trì khả năng hoạt động ngay cả khi một trong hai dịch vụ gặp sự cố. Trong trường hợp cả hai API đều không khả dụng, hệ thống trả về phản hồi 503 degraded thay vì đưa ra các kết luận không có cơ sở, đảm bảo nguyên tắc "fail safe" trong thiết kế.
+
+Cuối cùng, để thích ứng với các hình thức lừa đảo mới, hệ thống cần được cập nhật thường xuyên thông qua cơ sở tri thức động và các cơ chế phát hiện bất thường. Thay vì chỉ dựa vào các mẫu lừa đảo đã biết, chatbot nên tập trung nhận diện các đặc điểm hành vi mang tính bản chất của hoạt động lừa đảo như tạo áp lực thời gian, đe dọa tâm lý, yêu cầu giữ bí mật hoặc yêu cầu thực hiện giao dịch tài chính. Cách tiếp cận này giúp hệ thống duy trì khả năng phát hiện ngay cả khi xuất hiện các kịch bản lừa đảo mới chưa từng được quan sát trước đây.
+
+Nhờ sự kết hợp giữa các giải pháp kỹ thuật, cơ chế chuẩn hóa dữ liệu đầu vào và cập nhật tri thức liên tục, chatbot có thể nâng cao đáng kể khả năng chống chịu trước các điều kiện bất lợi trong môi trường thực tế, từ đó đáp ứng tốt yêu cầu về Robustness trong khung đánh giá Trustworthy AI.
+
+\section{Tiêu chí đánh giá}
+Khả năng chống chịu của hệ thống được đánh giá bằng các thử nghiệm với dữ liệu chứa tiếng ồn; nội dung bị sai lệch do lỗi nhận dạng giọng nói; các câu lệnh có dấu hiệu prompt injection; các kịch bản lừa đảo mới chưa xuất hiện trong dữ liệu huấn luyện.
+Hệ thống được xem là robust khi vẫn duy trì hiệu năng chấp nhận được trong các điều kiện bất lợi.

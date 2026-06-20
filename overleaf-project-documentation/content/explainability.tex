@@ -1,0 +1,70 @@
+Trong các hệ thống trí tuệ nhân tạo hỗ trợ ra quyết định, đặc biệt là các hệ thống liên quan đến an toàn tài chính và bảo vệ người dùng, khả năng giải thích (Explainability) đóng vai trò quan trọng không kém độ chính xác của mô hình. Một hệ thống có thể đưa ra kết quả đúng trong phần lớn trường hợp, nhưng nếu người dùng không hiểu lý do dẫn đến kết quả đó thì mức độ tin tưởng và khả năng chấp nhận hệ thống sẽ bị hạn chế đáng kể \cite{shin2021_explainability_trust}.
+
+Đối với chatbot phát hiện lừa đảo điện thoại cho người cao tuổi, yêu cầu về khả năng giải thích càng trở nên quan trọng bởi các cảnh báo của hệ thống có thể ảnh hưởng trực tiếp đến quyết định tài chính, hành vi giao tiếp và cảm nhận an toàn của người sử dụng. Nếu chatbot chỉ đưa ra các kết luận như "an toàn", "nguy hiểm" hoặc "có khả năng lừa đảo cao" mà không giải thích rõ nguyên nhân, người dùng có thể không hiểu cơ sở của quyết định hoặc ngược lại, tin tưởng tuyệt đối vào AI mà không thực hiện các bước xác minh cần thiết.
+
+Do đó, Explainability không chỉ là một yêu cầu kỹ thuật mà còn là yếu tố giúp xây dựng mối quan hệ tin cậy phù hợp giữa con người và hệ thống AI. Một chatbot có khả năng giải thích tốt sẽ giúp người dùng hiểu được các dấu hiệu nguy hiểm, nâng cao nhận thức về lừa đảo và duy trì vai trò chủ động trong quá trình ra quyết định.
+
+\section{Các thách thức về khả năng giải thích}
+\subsection{Vấn đề "hộp đen" của các mô hình AI hiện đại}
+Một trong những thách thức lớn nhất của Explainability xuất phát từ bản chất của các mô hình học sâu và mô hình ngôn ngữ lớn hiện nay. Các mô hình như BERT, GPT hoặc các biến thể LLM thường bao gồm hàng tỷ tham số và thực hiện quá trình suy luận thông qua các phép biến đổi phức tạp bên trong mạng nơ-ron \cite{devlin2018bert, shoeybi2019megatron}. Mặc dù chúng có khả năng đạt độ chính xác cao, việc giải thích chính xác quá trình dẫn đến một quyết định cụ thể lại không hề đơn giản.
+
+Đối với người dùng thông thường, đặc biệt là người cao tuổi, những khái niệm như xác suất dự đoán, trọng số đặc trưng hoặc confidence score thường rất khó hiểu. Nếu chatbot chỉ cung cấp các chỉ số kỹ thuật mà không giải thích bằng ngôn ngữ tự nhiên, người dùng sẽ khó nhận biết tại sao hệ thống lại đánh giá một cuộc gọi là nguy hiểm.
+
+Ngoài ra, khi hệ thống đưa ra kết quả sai nhưng không thể giải thích được nguyên nhân, việc kiểm tra, cải thiện hoặc khắc phục lỗi cũng trở nên khó khăn hơn. Điều này ảnh hưởng trực tiếp đến độ tin cậy của chatbot trong quá trình sử dụng thực tế.
+
+\subsection{Khoảng cách giữa giải thích kỹ thuật và khả năng tiếp nhận của người dùng}
+Một khó khăn khác là sự khác biệt giữa cách hệ thống AI "hiểu" dữ liệu và cách con người tiếp nhận thông tin. Các mô hình học máy thường biểu diễn dữ liệu dưới dạng các con số và xác suất, trong khi người dùng lại mong muốn các lý do cụ thể, trực quan và dễ hiểu.
+Đối với người cao tuổi, việc trình bày các thông tin kỹ thuật phức tạp có thể gây nhầm lẫn hoặc làm giảm khả năng tiếp nhận cảnh báo. Nếu giải thích quá dài hoặc chứa nhiều thuật ngữ chuyên môn, người dùng có thể bỏ qua những thông tin quan trọng nhất liên quan đến mức độ rủi ro của cuộc gọi.
+
+Vì vậy, một trong những thách thức chính của Explainability là chuyển đổi các kết quả phân tích kỹ thuật thành các thông điệp đơn giản, dễ hiểu nhưng vẫn đảm bảo phản ánh đúng bản chất của quyết định do AI đưa ra.
+
+\subsection{Khả năng kiểm chứng và giải trình}
+Một hệ thống AI được triển khai trong môi trường thực tế không chỉ cần giải thích cho người dùng mà còn phải có khả năng giải trình (Accountability) đối với các bên liên quan như nhà phát triển, cơ quan quản lý hoặc chuyên gia đánh giá hệ thống.
+
+Trong trường hợp chatbot đưa ra cảnh báo sai hoặc bỏ sót một cuộc gọi lừa đảo, cần có khả năng truy vết lại toàn bộ quá trình phân tích để xác định nguyên nhân dẫn đến quyết định đó. Nếu hệ thống không lưu lại các thông tin liên quan đến quá trình suy luận, việc kiểm toán hoặc cải tiến mô hình trong tương lai sẽ gặp nhiều khó khăn.
+
+\subsection{Yêu cầu về tính minh bạch đối với người cao tuổi}
+Do đối tượng sử dụng chính của hệ thống là người cao tuổi, khả năng giải thích cần được thiết kế phù hợp với đặc điểm nhận thức và thói quen tiếp nhận thông tin của nhóm người dùng này.
+
+Trước hết, chatbot cần sử dụng ngôn ngữ đơn giản, trực tiếp và dễ hiểu thay vì các thuật ngữ kỹ thuật liên quan đến trí tuệ nhân tạo hoặc xác suất thống kê. Chẳng hạn, thay vì thông báo rằng:
+"Hệ thống phát hiện tín hiệu bất thường với độ tin cậy 92\%", chatbot nên trình bày dưới dạng:
+"Cuộc gọi này có khả năng là lừa đảo vì người gọi yêu cầu chuyển tiền khẩn cấp và gây áp lực thời gian."
+Cách diễn đạt này giúp người dùng hiểu ngay nguyên nhân dẫn đến cảnh báo mà không cần có kiến thức chuyên môn về AI. 
+Bên cạnh đó, mọi cảnh báo cần gắn với các dấu hiệu cụ thể xuất hiện trong nội dung cuộc gọi. Hệ thống nên chỉ rõ những yếu tố như yêu cầu cung cấp mã OTP, giả danh cơ quan công an, yêu cầu chuyển tiền hoặc đe dọa pháp lý. Điều này giúp người dùng hiểu chatbot đang dựa trên những thông tin nào để đưa ra đánh giá.
+
+Ngoài ra, các giải thích cần được trình bày ngắn gọn, tập trung vào hành động cần thực hiện tiếp theo. Đối với người cao tuổi, những hướng dẫn đơn giản như "không cung cấp thông tin cá nhân", "liên hệ người thân" hoặc "gọi lại qua số chính thức" thường có giá trị thực tiễn cao hơn các phân tích kỹ thuật phức tạp.
+
+\section{Giải pháp nâng cao tính minh bạch trong hệ thống}
+Để đảm bảo Explainability, hệ thống chatbot áp dụng các giải pháp ở hai cấp độ: cấp độ phản hồi người dùng (user-facing) và cấp độ kỹ thuật (developer-facing).
+
+Ở cấp độ phản hồi người dùng, hệ thống kết hợp giữa hướng dẫn trong System Prompt và xử lý hậu kỳ bằng mã nguồn để đảm bảo mỗi phản hồi đều chứa lời giải thích rõ ràng:
+
+\begin{itemize}
+    \item Tệp SystemPrompt.txt định nghĩa một mục Explainability riêng, trong đó quy định: "Mọi kết luận phải kèm một lý do ngắn gọn", "Sử dụng ngôn ngữ đời thường", "Không dùng thuật ngữ kỹ thuật phức tạp". Các ví dụ cụ thể được cung cấp:
+    \begin{itemize}
+        \item Nên: "Dạ tại vì: Họ yêu cầu ông/bà cung cấp mã OTP."
+        \item Nên: "Dạ là vì: Họ yêu cầu chuyển tiền để nhận thưởng."
+        \item Không nên: "Lý do: Đối tượng thực hiện hành vi phishing nhằm chiếm đoạt tài khoản và tài sản."
+    \end{itemize}
+    \item System Prompt yêu cầu lượt đầu tiên trình bày theo cấu trúc: chào → nhận định lừa đảo → giải thích lý do → gợi ý giải pháp, mỗi phần trên một dòng riêng. Cấu trúc này được đảm bảo thông qua xử lý hậu kỳ, giúp việc ngắt dòng đúng định dạng ngay cả khi mô hình không tự làm được. Dòng thứ hai của phản hồi luôn là phần giải thích lý do, giúp người dùng hiểu tại sao cuộc gọi bị đánh giá là lừa đảo.
+    \item System Prompt nghiêm cấm việc thêm chi tiết không có trong lời người dùng kể. Điều này đảm bảo mọi lý do cảnh báo đều có thể được đối chiếu trực tiếp với nội dung cuộc gọi thực tế, tăng khả năng kiểm chứng.
+\end{itemize}
+
+Ở cấp độ kỹ thuật, hệ thống cung cấp các thông tin hỗ trợ cho nhà phát triển và quản trị viên:
+
+\begin{itemize}
+    \item API response chứa thông tin gỡ lỗi: Kết quả trả về bao gồm vùng miền phát hiện được, nội dung sau chuẩn hóa phương ngữ, số lượng khối tri thức RAG được truy xuất và cách xưng hô đã xác định, giúp kiểm tra pipeline đầu vào và quyết định của hệ thống.
+    \item HallucinationGuard ghi log nội bộ: Mỗi lần kiểm tra, hệ thống ghi lại câu hỏi gốc, phản hồi của mô hình, các nội dung trong phản hồi có căn cứ hoặc không có căn cứ trong cơ sở tri thức, điểm neo (grounding score) và trạng thái phát hiện. Từ log này, tỷ lệ hallucination trung bình được tính toán để phục vụ việc giám sát hệ thống.
+    \item Thống kê cơ sở tri thức: Hệ thống cung cấp thống kê tổng thể về cơ sở tri thức RAG, bao gồm tổng số khối tri thức và số lượng theo từng loại hình lừa đảo.
+\end{itemize}
+
+Thông qua các giải pháp trên, chatbot đảm bảo rằng mọi cảnh báo đều đi kèm lời giải thích ngắn gọn bằng ngôn ngữ tự nhiên, có thể đối chiếu với nội dung cuộc gọi mà người dùng đã cung cấp, đồng thời cung cấp các công cụ kiểm tra cho nhà phát triển nhằm đáp ứng yêu cầu về tính minh bạch trong khung đánh giá Trustworthy AI.
+
+\section{Tiêu chí đánh giá}
+Tính minh bạch được đánh giá thông qua: 
+\begin{itemize}
+    \item Mức độ rõ ràng của các lý do cảnh báo.
+    \item Khả năng người dùng hiểu được nguyên nhân dẫn đến quyết định của hệ thống.
+    \item Khả năng truy vết quá trình suy luận của chatbot thông qua log nội bộ và endpoint gỡ lỗi.
+    \item Tỷ lệ phản hồi có chứa lời giải thích hợp lệ trên tổng số phản hồi.
+\end{itemize}

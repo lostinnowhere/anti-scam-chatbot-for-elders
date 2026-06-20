@@ -1,0 +1,59 @@
+Quyền riêng tư (Privacy) là một trong những nguyên tắc nền tảng của Trustworthy AI, phản ánh khả năng bảo vệ dữ liệu cá nhân và tôn trọng quyền kiểm soát thông tin của người dùng trong suốt quá trình vận hành hệ thống. Các tài liệu về Trustworthy AI cho rằng bảo vệ quyền riêng tư là một chiều cạnh quan trọng nhằm đảm bảo người dùng có thể tin tưởng vào hệ thống AI, đặc biệt trong các ứng dụng xử lý dữ liệu giao tiếp cá nhân, nơi thông tin được thu thập thường mang tính nhạy cảm và có nguy cơ ảnh hưởng trực tiếp đến quyền lợi của người sử dụng \cite{li2021_trustworthyai, leschanowsky2024_privacytrustcai}.
+
+Trong đề tài chatbot phát hiện lừa đảo điện thoại cho người cao tuổi, hệ thống cần phân tích nội dung cuộc gọi, giọng nói và các thông tin liên quan đến quá trình liên lạc nhằm đánh giá mức độ rủi ro. Những dữ liệu này có thể bao gồm thông tin cá nhân, dữ liệu tài chính, mối quan hệ gia đình hoặc các nội dung trao đổi riêng tư của người sử dụng. Nếu không được quản lý đúng cách, việc thu thập và xử lý dữ liệu có thể tạo ra những rủi ro đáng kể đối với quyền riêng tư của người dùng.
+
+Bên cạnh đó, người cao tuổi thường là nhóm có mức độ hiểu biết hạn chế về bảo vệ dữ liệu cá nhân trong môi trường số. Nhiều người có thể không nhận thức đầy đủ về phạm vi dữ liệu đang được thu thập hoặc các nguy cơ phát sinh khi dữ liệu bị rò rỉ. Vì vậy, việc đảm bảo Privacy không chỉ là yêu cầu kỹ thuật mà còn là trách nhiệm đạo đức trong quá trình phát triển và triển khai hệ thống.
+
+\section{Các rủi ro về quyền riêng tư}
+\subsection{Thu thập và xử lý dữ liệu nhạy cảm}
+Để phát hiện các dấu hiệu lừa đảo, chatbot cần tiếp cận với nội dung cuộc gọi hoặc văn bản được chuyển đổi từ giọng nói. Điều này đồng nghĩa với việc hệ thống có thể xử lý nhiều loại dữ liệu nhạy cảm như tên tuổi, số điện thoại, địa chỉ, thông tin ngân hàng hoặc các nội dung trao đổi mang tính riêng tư.
+
+Mặc dù việc thu thập dữ liệu là cần thiết cho mục tiêu phát hiện lừa đảo, nguy cơ xuất hiện khi phạm vi dữ liệu được thu thập vượt quá nhu cầu thực tế của hệ thống. Việc xử lý quá nhiều thông tin cá nhân không chỉ làm tăng chi phí quản lý dữ liệu mà còn gia tăng mức độ rủi ro nếu xảy ra sự cố bảo mật.
+
+\subsection{Rò rỉ dữ liệu và truy cập trái phép}
+Một trong những mối đe dọa nghiêm trọng nhất đối với quyền riêng tư là nguy cơ dữ liệu bị rò rỉ hoặc bị truy cập bởi các đối tượng không được phép.
+
+Nếu cơ sở dữ liệu lưu trữ nội dung cuộc gọi hoặc bản ghi giọng nói không được bảo vệ đầy đủ, các thông tin cá nhân của người dùng có thể bị khai thác cho các mục đích ngoài ý muốn. Đặc biệt, đối với người cao tuổi, việc lộ thông tin cá nhân có thể khiến họ trở thành mục tiêu của các hình thức lừa đảo khác trong tương lai.
+
+Ngoài các cuộc tấn công từ bên ngoài, nguy cơ truy cập trái phép từ nội bộ tổ chức vận hành hệ thống cũng là một vấn đề cần được xem xét trong quá trình thiết kế.
+
+\subsection{Sử dụng dữ liệu vượt quá mục đích ban đầu}
+Một thách thức khác liên quan đến Privacy là nguy cơ dữ liệu được sử dụng cho các mục đích ngoài phạm vi mà người dùng đã đồng ý ban đầu.
+
+Ví dụ, dữ liệu giọng nói hoặc nội dung cuộc gọi được thu thập để phát hiện lừa đảo có thể bị sử dụng cho các mục đích khác như quảng cáo, phân tích hành vi người dùng hoặc huấn luyện các mô hình AI không liên quan. Nếu người dùng không được thông báo đầy đủ về các hoạt động này, quyền kiểm soát dữ liệu cá nhân của họ sẽ bị suy giảm đáng kể.
+
+Đối với nhóm người cao tuổi, việc thiếu minh bạch trong quá trình sử dụng dữ liệu có thể làm giảm niềm tin vào hệ thống và tạo ra những lo ngại về quyền riêng tư.
+
+\subsection{Lưu trữ dữ liệu quá mức cần thiết}
+Nhiều hệ thống AI có xu hướng lưu trữ dữ liệu trong thời gian dài để phục vụ mục đích cải thiện mô hình hoặc phân tích sau này. Tuy nhiên, việc lưu giữ các bản ghi cuộc gọi hoặc dữ liệu giọng nói trong thời gian quá dài làm gia tăng nguy cơ lộ lọt thông tin cá nhân.
+
+Ngoài ra, khi lượng dữ liệu tích lũy ngày càng lớn, chi phí quản lý và bảo mật cũng tăng theo. Nếu không có chính sách xóa dữ liệu rõ ràng, hệ thống có thể trở thành mục tiêu hấp dẫn đối với các cuộc tấn công mạng.
+
+\subsection{Thiếu minh bạch trong việc thu thập dữ liệu}
+Một vấn đề phổ biến trong nhiều ứng dụng AI hiện nay là người dùng không thực sự hiểu dữ liệu nào đang được thu thập, được lưu trữ trong bao lâu và được sử dụng cho mục đích gì.
+
+Đối với người cao tuổi, các điều khoản sử dụng hoặc chính sách quyền riêng tư thường khó tiếp cận do sử dụng ngôn ngữ pháp lý hoặc kỹ thuật phức tạp. Điều này khiến người dùng khó đưa ra quyết định có hiểu biết đầy đủ (informed consent) khi sử dụng hệ thống.
+
+\section{Giải pháp bảo vệ quyền riêng tư}
+Để giảm thiểu các rủi ro về Privacy, hệ thống chatbot cần được thiết kế theo nguyên tắc “Privacy by Design”, tức quyền riêng tư được tích hợp ngay từ giai đoạn thiết kế thay vì chỉ bổ sung sau khi hệ thống đã hoàn thiện.
+
+Trước hết, hệ thống cần áp dụng nguyên tắc tối thiểu hóa dữ liệu (Data Minimization). Chỉ những thông tin thực sự cần thiết cho mục tiêu phát hiện lừa đảo mới được phép thu thập và xử lý. Các dữ liệu không liên quan đến quá trình đánh giá rủi ro cần được loại bỏ hoặc không được lưu trữ.
+
+Bên cạnh đó, việc xử lý dữ liệu nên được thực hiện trên thiết bị người dùng (on-device processing) trong phạm vi có thể. Cách tiếp cận này giúp giảm lượng dữ liệu phải truyền đến máy chủ trung tâm, từ đó hạn chế nguy cơ rò rỉ thông tin trong quá trình truyền tải.
+
+Đối với các dữ liệu cần lưu trữ, hệ thống phải áp dụng các biện pháp bảo mật phù hợp như mã hóa dữ liệu, kiểm soát quyền truy cập và ghi nhận nhật ký truy cập nhằm ngăn chặn các hành vi sử dụng trái phép. Đồng thời, người dùng cần được quyền xem, tải xuống hoặc yêu cầu xóa dữ liệu cá nhân của mình bất kỳ lúc nào.
+
+Một yêu cầu quan trọng khác là đảm bảo tính minh bạch trong việc thu thập và sử dụng dữ liệu. Hệ thống cần giải thích rõ ràng cho người dùng về loại dữ liệu được thu thập, mục đích sử dụng, thời gian lưu trữ và các bên có thể tiếp cận dữ liệu. Các thông báo này cần được trình bày bằng ngôn ngữ đơn giản, dễ hiểu và phù hợp với người cao tuổi.
+
+Ngoài ra, chatbot cần tuân thủ các quy định pháp luật hiện hành về bảo vệ dữ liệu cá nhân. Tại Việt Nam, việc xử lý dữ liệu người dùng cần phù hợp với Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân, trong đó nhấn mạnh nguyên tắc minh bạch, giới hạn mục đích sử dụng và quyền kiểm soát dữ liệu của chủ thể dữ liệu.
+
+Thông qua việc áp dụng các nguyên tắc trên, hệ thống chatbot có thể giảm thiểu các rủi ro liên quan đến quyền riêng tư, tăng cường niềm tin của người dùng và đáp ứng yêu cầu Privacy trong khung đánh giá Trustworthy AI.
+
+\section{Tiêu chí đánh giá}
+Các tiêu chí đánh giá bao gồm:
+\begin{itemize}
+    \item Mức độ tối thiểu hóa dữ liệu được thu thập.
+\item Tỷ lệ dữ liệu nhạy cảm được mã hóa.
+\item Khả năng xóa hoặc ẩn danh dữ liệu người dùng.
+\item Mức độ tuân thủ các nguyên tắc bảo vệ dữ liệu cá nhân.
+\end{itemize}

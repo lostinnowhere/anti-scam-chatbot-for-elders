@@ -1,0 +1,36 @@
+\section{Đặt vấn đề}
+Sự phát triển nhanh chóng của trí tuệ nhân tạo (Artificial Intelligence – AI) đã tạo ra nhiều cơ hội trong việc hỗ trợ con người giải quyết các vấn đề của đời sống xã hội. Các hệ thống chatbot ứng dụng mô hình ngôn ngữ lớn (Large Language Models – LLM) ngày càng được sử dụng rộng rãi trong nhiều lĩnh vực như chăm sóc khách hàng, giáo dục, y tế và an ninh mạng. Tuy nhiên, bên cạnh những lợi ích mà AI mang lại, việc triển khai các hệ thống AI trong các bối cảnh liên quan trực tiếp đến con người cũng đặt ra nhiều thách thức về độ tin cậy, tính công bằng, quyền riêng tư và trách nhiệm xã hội.
+
+Trong những năm gần đây, lừa đảo qua điện thoại đã trở thành một trong những hình thức tội phạm công nghệ phổ biến và có tốc độ gia tăng nhanh. Các đối tượng lừa đảo thường giả danh cơ quan nhà nước, ngân hàng, bệnh viện hoặc người thân nhằm thao túng tâm lý nạn nhân và chiếm đoạt tài sản. Theo thống kê, tội phạm mạng gây thiệt hại gần 40.000 tỷ đồng giai đoạn 2020-2025 \cite{baochinhphu2025_toiphammang}. Nhóm người cao tuổi là đối tượng đặc biệt dễ bị tổn thương trước các hình thức lừa đảo này do hạn chế về kỹ năng số, khả năng xác minh thông tin và mức độ tiếp cận công nghệ hiện đại.
+
+Trước thực trạng đó, việc xây dựng một chatbot có khả năng hỗ trợ phát hiện các dấu hiệu lừa đảo trong nội dung cuộc gọi là một hướng tiếp cận có ý nghĩa thực tiễn. Tuy nhiên, một chatbot chống lừa đảo không chỉ cần đưa ra cảnh báo chính xác mà còn phải hoạt động một cách đáng tin cậy, công bằng và minh bạch. Nếu hệ thống thường xuyên cảnh báo sai, đưa ra các giải thích khó hiểu hoặc thiên vị đối với một nhóm người dùng nào đó, chatbot có thể gây ra những tác động tiêu cực thay vì mang lại lợi ích cho xã hội.
+
+Xu hướng hiện nay cho thấy việc đánh giá AI không còn chỉ dựa trên độ chính xác mà ngày càng mở rộng sang các chiều cạnh của Trustworthy AI \cite{nist_ai_rmf}. Trong đề tài này, nhóm tiếp cận bài toán theo khung đánh giá AI đáng tin cậy gồm sáu trục cốt lõi: Reliability (Độ tin cậy), Fairness (Tính công bằng), Robustness (Khả năng chống chịu), Explainability (Khả năng giải thích), Privacy (Bảo vệ quyền riêng tư) và Social Impact (Tác động đối với nhóm người dùng yếu thế).
+
+Từ những lý do trên, đề tài “Chatbot phát hiện lừa đảo điện thoại cho người cao tuổi” được thực hiện nhằm phân tích và đề xuất một hệ thống chatbot ứng dụng trí tuệ nhân tạo có khả năng hỗ trợ nhận diện các cuộc gọi nghi ngờ lừa đảo, đồng thời đảm bảo các nguyên tắc của AI đáng tin cậy trong quá trình thiết kế và vận hành hệ thống.
+
+\section{Mục tiêu của đề tài}
+Mục tiêu tổng quát của đề tài là thiết kế mô hình chatbot ứng dụng trí tuệ nhân tạo nhằm hỗ trợ người cao tuổi phát hiện các cuộc gọi có dấu hiệu lừa đảo, đồng thời xây dựng hệ thống theo định hướng Trustworthy AI nhằm đảm bảo tính an toàn, minh bạch và phù hợp với nhóm người dùng dễ bị tổn thương.
+
+Để đạt được mục tiêu trên, đề tài tập trung giải quyết các mục tiêu cụ thể tương ứng với sáu chiều cạnh của AI đáng tin cậy.
+
+Về mặt Reliability, chatbot cần đảm bảo các phản hồi được kiểm soát chất lượng nhằm giảm thiểu thông tin sai lệch, đồng thời duy trì khả năng hoạt động ổn định ngay cả khi dịch vụ AI gặp sự cố tạm thời.
+
+Về mặt Fairness, hệ thống cần xử lý công bằng các phương ngữ và cách xưng hô khác nhau của người dùng trên cả ba miền Bắc, Trung, Nam, tránh thiên vị hoặc loại trừ bất kỳ nhóm người dùng nào dựa trên đặc điểm ngôn ngữ hoặc vùng miền.
+
+Về mặt Robustness, chatbot phải có khả năng chống chịu trước các lỗi hạ tầng và đầu vào bất thường, duy trì phản hồi an toàn ngay cả khi các thành phần bên ngoài gặp trục trặc.
+
+Về mặt Explainability, mọi kết luận của hệ thống cần được giải thích ngắn gọn, dễ hiểu bằng ngôn ngữ đời thường, giúp người cao tuổi hiểu được lý do đằng sau mỗi cảnh báo.
+
+Về mặt Privacy, hệ thống cần bảo vệ dữ liệu cá nhân của người dùng, không lưu trữ lịch sử hội thoại và không yêu cầu thông tin nhạy cảm trong quá trình tương tác.
+
+Về mặt Social Impact, chatbot cần được thiết kế như một công cụ hỗ trợ thay vì thay thế quyết định của con người, khuyến khích người dùng tham khảo ý kiến người thân và thích ứng với nhu cầu của người cao tuổi qua từng lượt hội thoại.
+
+Thông qua việc kết hợp các mục tiêu trên, đề tài hướng tới xây dựng một mô hình chatbot không chỉ có hiệu quả kỹ thuật mà còn đáp ứng các yêu cầu về đạo đức và trách nhiệm xã hội trong phát triển trí tuệ nhân tạo.
+
+\section{Phạm vi phân tích}
+Đề tài tập trung phân tích và thiết kế mô hình chatbot hỗ trợ phát hiện lừa đảo điện thoại dựa trên nội dung văn bản hoặc nội dung cuộc gọi do người dùng nhập vào, đồng thời đề xuất các cơ chế đảm bảo sáu chiều cạnh của Trustworthy AI gồm Reliability, Fairness, Robustness, Explainability, Privacy và Social Impact.
+
+Đề tài không tập trung vào việc xây dựng hạ tầng viễn thông thực tế, phát triển hệ thống thương mại quy mô lớn hoặc triển khai trực tiếp trên mạng viễn thông của các nhà cung cấp dịch vụ. Ngoài ra, các nội dung liên quan đến điều tra tội phạm mạng, phân tích pháp lý hoặc nhận diện sinh trắc học người gọi cũng nằm ngoài phạm vi phân tích của đề tài.
+
+Trong khuôn khổ môn học Tư duy Trí tuệ nhân tạo, kết quả của đề tài là phân tích các thách thức về đạo đức, kỹ thuật và xã hội và đề xuất giải pháp khi ứng dụng AI vào việc bảo vệ người cao tuổi trước các hình thức lừa đảo qua điện thoại.

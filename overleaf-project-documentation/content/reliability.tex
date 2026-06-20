@@ -1,0 +1,112 @@
+Độ tin cậy (Reliability) là một trong những thành phần quan trọng nhất của khung Trustworthy AI. Một hệ thống AI được xem là đáng tin cậy khi có khả năng hoạt động ổn định, đưa ra các kết quả nhất quán và duy trì hiệu năng trong nhiều điều kiện sử dụng khác nhau \cite{nist_ai_rmf}. Đối với chatbot phát hiện lừa đảo điện thoại cho người cao tuổi, độ tin cậy không chỉ ảnh hưởng đến hiệu quả kỹ thuật của hệ thống mà còn tác động trực tiếp đến sự an toàn tài chính và tâm lý của người sử dụng.
+
+Khác với các chatbot hỗ trợ thông tin thông thường, chatbot chống lừa đảo tham gia vào quá trình hỗ trợ ra quyết định trong các tình huống có mức độ rủi ro cao. Các cảnh báo của hệ thống có thể ảnh hưởng trực tiếp đến việc người dùng có thực hiện giao dịch tài chính, cung cấp thông tin cá nhân hoặc tiếp tục cuộc gọi hay không. Do đó, mọi sai sót trong quá trình đánh giá đều có thể dẫn đến những hậu quả nghiêm trọng.
+
+Hệ thống thiếu ổn định, thường xuyên thay đổi kết quả hoặc đưa ra cảnh báo không nhất quán sẽ khó được người dùng tin tưởng. Vì vậy, Reliability là yêu cầu nền tảng cần được xem xét ngay từ giai đoạn thiết kế hệ thống.
+
+\section{Các thách thức về độ tin cậy}
+\subsection{Hiện tượng Hallucination của mô hình ngôn ngữ lớn}
+Một trong những thách thức lớn nhất đối với các hệ thống sử dụng LLM là hiện tượng hallucination. Đây là tình trạng mô hình tạo ra các thông tin không tồn tại trong dữ liệu đầu vào nhưng vẫn trình bày chúng như những sự thật có cơ sở \cite{anhhoang2025_hallucination}.
+
+Trong bài toán phát hiện lừa đảo điện thoại, hallucination có thể khiến chatbot tự suy diễn các dấu hiệu nguy hiểm không thực sự xuất hiện trong nội dung cuộc gọi. Chẳng hạn, một cuộc gọi hợp lệ từ bệnh viện có chứa cụm từ “chuyển viện” hoặc “điều trị khẩn cấp” có thể bị hệ thống diễn giải thành hành vi gây áp lực tâm lý hoặc lừa đảo tài chính. Khi đó, chatbot không chỉ đưa ra kết luận sai mà còn có thể tạo ra các lý do cảnh báo không có trong dữ liệu thực tế.
+
+Do người cao tuổi thường có xu hướng tin tưởng vào các hệ thống công nghệ được giới thiệu như công cụ hỗ trợ chính thức, các phản hồi hallucination có thể gây ra những ảnh hưởng đáng kể đến quá trình ra quyết định của người dùng.
+
+\subsection{Cảnh báo nhầm các cuộc gọi hợp lệ (False Positive)}
+False Positive là trường hợp hệ thống đánh giá một cuộc gọi hợp lệ là cuộc gọi lừa đảo. Đây là một dạng sai sót thường gặp trong các hệ thống phát hiện gian lận do mục tiêu ưu tiên phát hiện tối đa các nguy cơ tiềm ẩn.
+
+Trong thực tế, nhiều cuộc gọi hợp pháp cũng có thể chứa những nội dung tương tự các kịch bản lừa đảo phổ biến. Ví dụ, ngân hàng có thể yêu cầu xác minh giao dịch, bệnh viện có thể thông báo tình trạng khẩn cấp hoặc người thân có thể nhờ hỗ trợ tài chính trong một tình huống bất ngờ. Nếu chatbot quá nhạy trong việc phát hiện các từ khóa nguy hiểm mà không phân tích đầy đủ ngữ cảnh, hệ thống có thể liên tục phát sinh các cảnh báo sai.
+
+Hậu quả của false positive không chỉ là sự bất tiện trong quá trình sử dụng mà còn làm suy giảm niềm tin của người dùng vào chatbot. Nếu cảnh báo sai xuất hiện quá thường xuyên, người dùng có thể hình thành tâm lý bỏ qua các cảnh báo trong tương lai, kể cả khi hệ thống phát hiện đúng một cuộc gọi lừa đảo thực sự.
+
+\subsection{Bỏ sót các cuộc gọi lừa đảo (False Negative)}
+Trái ngược với false positive, false negative xảy ra khi hệ thống đánh giá một cuộc gọi lừa đảo là an toàn hoặc không phát hiện được dấu hiệu nguy hiểm.
+
+Đây được xem là loại lỗi nghiêm trọng nhất trong bài toán phát hiện lừa đảo bởi nó có thể khiến người dùng tin rằng cuộc gọi là hợp pháp và tiếp tục thực hiện các hành động có rủi ro cao như chuyển tiền, cung cấp thông tin cá nhân hoặc chia sẻ mã xác thực.
+
+Thách thức này càng trở nên phức tạp khi các đối tượng lừa đảo liên tục thay đổi chiến thuật nhằm tránh bị phát hiện. Những hình thức lừa đảo mới xuất hiện nhưng chưa từng có trong dữ liệu huấn luyện, thường được gọi là các trường hợp zero-day scam, có thể vượt qua các cơ chế phát hiện dựa trên dữ liệu lịch sử. Nếu hệ thống không có khả năng thích ứng với các kịch bản mới, tỷ lệ bỏ sót sẽ gia tăng theo thời gian.
+
+\subsection{Tính nhất quán trong phản hồi}
+Một yêu cầu quan trọng khác của Reliability là tính nhất quán (Consistency). Đối với cùng một nội dung cuộc gọi, chatbot cần đưa ra kết quả tương tự trong các lần đánh giá khác nhau.
+
+Tuy nhiên, các mô hình ngôn ngữ lớn thường mang tính xác suất và có thể tạo ra các phản hồi khác nhau cho cùng một đầu vào. Điều này dẫn đến nguy cơ cùng một cuộc gọi nhưng lại nhận được các mức cảnh báo khác nhau tùy theo thời điểm xử lý.
+
+Ngoài ra, hệ thống cũng cần duy trì tính nhất quán trước các biến thể không liên quan đến nội dung ngữ nghĩa như giọng nam hoặc giọng nữ, người trẻ hoặc người già, giọng Bắc hoặc giọng Nam. Nếu kết quả phân tích thay đổi đáng kể chỉ do khác biệt về giọng nói hoặc cách phát âm, hệ thống sẽ khó đáp ứng yêu cầu về độ tin cậy trong môi trường thực tế.
+
+\section{Giải pháp nâng cao độ tin cậy của hệ thống}
+Để giảm thiểu các rủi ro nêu trên, chatbot được thiết kế theo hướng kết hợp giữa trí tuệ nhân tạo sinh ngôn ngữ và các cơ chế kiểm soát truyền thống nhằm đảm bảo tính ổn định của hệ thống.
+
+Trước hết, để hạn chế hiện tượng hallucination, chatbot áp dụng kiến trúc Retrieval-Augmented Generation (RAG), trong đó các phản hồi được xây dựng dựa trên cơ sở tri thức đã được xác thực. Bên cạnh đó, hệ thống triển khai HallucinationGuard - một tầng kiểm soát hoạt động sau khi mô hình sinh phản hồi. Cơ chế này hoạt động qua ba giai đoạn:
+
+\begin{itemize}
+    \item {Trích xuất khẳng định (Claim Extraction):} Phản hồi của mô hình được phân tách thành các câu riêng lẻ. Mỗi câu được kiểm tra xem có chứa các khẳng định về tổ chức, con người, hành động hoặc sự kiện cụ thể (ví dụ: tên cơ quan, số điện thoại, hướng dẫn hành chính).
+    \item {Tính điểm neo (Grounding Score):} Mỗi khẳng định được đối chiếu với ngữ cảnh RAG và nội dung hội thoại gốc. Điểm neo được tính dựa trên tỷ lệ các khẳng định có thể được xác thực từ ngữ cảnh. Ngưỡng được đặt ở mức 0.2 -- nếu dưới ngưỡng này, phản hồi bị đánh dấu là không đáng tin cậy.
+    \item {Phát hiện mẫu không an toàn (Unsafe Pattern Detection):} Các mẫu văn bản như số điện thoại bịa đặt, tên tổ chức không xuất hiện trong dữ liệu, hoặc hướng dẫn liên hệ với cơ quan không có trong ngữ cảnh được phát hiện và góp phần làm giảm điểm neo.
+\end{itemize}
+
+Khi HallucinationGuard kích hoạt, phản hồi của mô hình được thay thế bằng một thông báo mềm dẻo hơn, chẳng hạn như: "Dạ dựa trên thông tin ông/bà cung cấp, cháu chưa đủ cơ sở để khẳng định đây có phải là lừa đảo hay không. Ông/bà nên tham khảo ý kiến người thân trước khi đưa ra quyết định nhé." Cách tiếp cận này giúp tránh việc mô hình đưa ra các thông tin sai lệch trong khi vẫn duy trì sự hỗ trợ cho người dùng.
+
+Đối với vấn đề false positive, hệ thống phân tích ngữ cảnh toàn bộ cuộc hội thoại và yêu cầu ít nhất hai từ khóa khớp trước khi đưa một kịch bản lừa đảo vào ngữ cảnh. Cách tiếp cận này giảm đáng kể số lượng cảnh báo sai so với phương pháp dựa trên từ khóa đơn lẻ. Để hạn chế false negative, chatbot sử dụng cơ chế dự phòng: nếu không tìm thấy kịch bản phù hợp trong cơ sở tri thức, hệ thống không ép mô hình suy diễn mà trả lời dựa trên thông tin người dùng cung cấp và khuyến nghị xác minh thêm.
+
+Bên cạnh đó, hệ thống áp dụng nguyên tắc chống suy diễn quá mức (anti-overthinking): nếu người dùng không đề cập đến các khái niệm như "chuyển tiền" hoặc "lừa đảo", chatbot không được chủ động nhắc đến các khái niệm này. Nguyên tắc này được nhúng trực tiếp trong cả System Prompt và RAG system message, giúp tránh các tình huống người dùng chỉ hỏi "Mai đi chơi không?" nhưng chatbot lại phân tích nguy cơ lừa đảo, gây hoang mang không cần thiết.
+
+Một trường hợp đặc biệt cần cân nhắc là khi người dùng cho biết người thân nhờ chuyển tiền. Về mặt lý thuyết, người thân rất hiếm khi lừa đảo lẫn nhau một cách cố ý; tuy nhiên, người thân có thể vô tình bị thao túng từ bên ngoài và trở thành công cụ chuyển tiếp yêu cầu lừa đảo. Do đó, hệ thống không áp dụng quy tắc tuyệt đối "người thân không bao giờ lừa đảo" mà thay vào đó đánh giá dựa trên các dấu hiệu bất thường đi kèm: số điện thoại lạ, giọng nói khác thường, yêu cầu gấp gáp hoặc yêu cầu giữ bí mật. Chỉ khi có các dấu hiệu đáng ngờ này, chatbot mới khuyến nghị xác minh lại. Cách tiếp cận mềm dẻo này giúp giảm false positive trong các tình huống nhờ vả thông thường giữa người thân, đồng thời vẫn duy trì cảnh giác với các trường hợp thao túng từ bên ngoài.
+
+Về tính nhất quán, hệ thống sử dụng cùng một System Prompt cho mỗi chế độ hoạt động (lượt 1 hoặc lượt 2+) và áp dụng các tham số sinh cố định. Điều này giúp giảm thiểu sự khác biệt ngẫu nhiên giữa các lần phản hồi cho cùng một đầu vào. Ngoài ra, cơ chế neo ngữ cảnh đảm bảo rằng trong các lượt hội thoại tiếp theo, RAG vẫn truy vấn dựa trên nội dung cuộc gọi gốc thay vì các nhánh hội thoại phụ.
+
+Cuối cùng, hệ thống triển khai cơ chế đánh giá độ tin cậy ở cấp độ hạ tầng thông qua chiến lược thử lại hai lớp: hệ thống thực hiện tối đa hai lần gọi lại với thời gian chờ tăng dần. Nếu Groq không khả dụng, OpenRouter được kích hoạt như một kênh dự phòng. Trong trường hợp cả hai đều thất bại, phản hồi 503 được trả về với thông báo hệ thống tạm thời không khả dụng, thay vì đưa ra các kết luận không có cơ sở.
+
+Thông qua các giải pháp trên, chatbot có thể nâng cao đáng kể độ tin cậy trong quá trình vận hành, đặc biệt là kiểm soát hallucination, giảm thiểu sai sót và đáp ứng tốt yêu cầu Reliability trong khung đánh giá Trustworthy AI.
+
+\section{Tiêu chí đánh giá}
+\subsection{Độ chính xác (Accuracy)}
+Accuracy phản ánh tỷ lệ dự đoán đúng trên tổng số mẫu kiểm thử.
+
+\[Accuracy=\frac{TP+TN}{TP+TN+FP+FN}\]
+
+Trong đó:
+TP (True Positive): Cuộc gọi lừa đảo được phát hiện đúng.
+
+TN (True Negative): Cuộc gọi hợp lệ được nhận diện đúng.
+
+FP (False Positive): Cuộc gọi hợp lệ bị cảnh báo nhầm.
+
+FN (False Negative): Cuộc gọi lừa đảo bị bỏ sót.
+
+Accuracy cung cấp cái nhìn tổng quan về hiệu năng của hệ thống, tuy nhiên chỉ số này chưa phản ánh đầy đủ mức độ nguy hiểm của từng loại sai sót.
+
+\subsection{Precision}
+Precision đánh giá mức độ chính xác của các cảnh báo do chatbot đưa ra.
+
+\[Precision=\frac{TP}{TP+FP}\]
+
+Precision cao cho thấy phần lớn các cảnh báo của hệ thống là chính xác, từ đó giúp giảm hiện tượng cảnh báo giả và duy trì niềm tin của người dùng.
+
+\subsection{Recall}
+Recall phản ánh khả năng phát hiện các cuộc gọi lừa đảo thực sự.
+
+\[Recall=\frac{TP}{TP+FN}\]
+
+Trong bài toán chống lừa đảo, Recall thường được ưu tiên hơn Accuracy vì việc bỏ sót một cuộc gọi lừa đảo có thể gây hậu quả nghiêm trọng cho người sử dụng.
+
+\subsection{F1-score}
+F1-Score là trung bình điều hòa giữa Precision và Recall.
+
+\[F1=2\times\frac{Precision\times Recall}{Precision+Recall}\]
+
+Chỉ số này đặc biệt phù hợp trong các bài toán mất cân bằng dữ liệu, khi số lượng cuộc gọi lừa đảo thường nhỏ hơn nhiều so với số lượng cuộc gọi hợp lệ.
+
+\subsection{False Positive Rate và False Negative Rate}
+Bên cạnh các chỉ số truyền thống, hệ thống cần được đánh giá riêng tỷ lệ cảnh báo nhầm và tỷ lệ bỏ sót.
+
+False Positive Rate phản ánh tỷ lệ các cuộc gọi hợp lệ bị đánh giá sai là lừa đảo.
+
+\[FPR=\frac{FP}{FP+TN}\]
+
+False Negative Rate phản ánh tỷ lệ các cuộc gọi lừa đảo bị bỏ sót.
+
+\[FNR=\frac{FN}{FN+TP}\]
+
+Trong hệ thống chống lừa đảo, FNR được xem là chỉ số đặc biệt quan trọng bởi nó phản ánh trực tiếp mức độ an toàn của người dùng.
+
+Ngoài ra, hệ thống cần được đánh giá dựa trên tỷ lệ hallucination của chatbot (số phản hồi bị HallucinationGuard kích hoạt trên tổng số phản hồi), mức độ nhất quán giữa các lần phân tích cùng một cuộc gọi, tỷ lệ thành công của cơ chế retry/fallback khi API gặp lỗi, khả năng duy trì kết quả khi thay đổi giọng nói, giới tính hoặc vùng miền. Các chỉ số này được tính trên tập dữ liệu kiểm thử có gán nhãn bởi chuyên gia.

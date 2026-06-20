@@ -1,0 +1,221 @@
+\documentclass[10pt, a4paper]{report}
+\usepackage{fontspec}            % Must use XeLaTeX
+\setmainfont{Times New Roman}    % Or "DejaVu Serif", "Libertinus Serif"
+% \setlength{\parskip}{15pt}
+\usepackage{fancyhdr}
+\usepackage{tikzlings}
+\usepackage{sectsty} % For coloring section headings
+\usepackage{pdfpages}
+\usepackage{minitoc}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\usepackage{fontawesome}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none
+]{biblatex}
+
+\addbibresource{references.bib}
+\usepackage{placeins}
+\setlength{\parskip}{10pt} % Adjust the amount of space here
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage{xcolor} % For coloring the code
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{0pt}
+\usepackage[most]{tcolorbox}
+\usepackage{enumerate}
+\usepackage{tikz,tkz-tab}
+\tikzset{set/.style={draw,circle,inner sep=0pt,align=center}}
+\usepackage{parcolumns}
+\usetikzlibrary{shapes.geometric}
+\usepackage{wasysym}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+
+\usepackage[tikz]{bclogo}
+\usepackage{longfbox}
+\usepackage{pgfplots}
+\usepackage{footnote}
+\usepackage[vietnamese]{babel}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, urlcolor=blue]{hyperref}
+\usepackage{setspace}
+% \doublespacing
+\usetikzlibrary {positioning,graphs,calc,decorations.pathmorphing,shapes,arrows.meta,arrows,shapes.misc,fit,patterns}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{compat=1.9}
+\usepackage[explicit]{titlesec}
+\usepackage{lipsum}
+
+% Define your colors
+\definecolor{titlebgdark}{RGB}{0,163,243}
+\definecolor{chapnumberbg}{RGB}{1,84,164}
+\definecolor{chapname}{RGB}{1,84,164}
+
+\rhead{\faBook \color{gray}\textbf{ \leftmark}}
+\lhead{\color{chapname}\textbf{Nhóm G05 - DT03}}
+
+\usepackage{tikzpagenodes}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2cm]{geometry}
+\usepackage{longtable}
+\usepackage{array}
+\usetikzlibrary{fit}
+\usepackage{lmodern}
+% \usepackage{cite}
+\urlstyle{same}
+
+% Apply color to section and subsection headings
+\sectionfont{\color{chapname}\normalfont\bfseries}
+\subsectionfont{\color{chapname}\normalfont\bfseries\large}
+
+\titleformat{\chapter}[display]
+{\Large}
+{}
+{0pt}
+{%
+    \begin{tikzpicture}
+        \node[
+        draw=chapname,
+        rounded corners,
+        outer sep=0pt,
+        inner sep=6pt,
+        rotate=90,
+        line width=1pt,
+        font=\Large\color{chapnumberbg}\bfseries
+        ]
+        (chapname)
+        {\chaptertitlename};
+        \node[
+        fill=chapnumberbg,
+        minimum width=2cm,
+        minimum height=2.3cm,
+        rounded corners,
+        anchor=west,
+        font=\color{white}\fontsize{40}{48}\selectfont\bfseries
+        ]
+        at ([xshift=6pt]chapname.south)
+        (chapnumber)
+        {\thechapter};
+        \node[
+        anchor=west,
+        text width=\textwidth-4cm,
+        font=\bfseries\LARGE
+        ]
+        at ([xshift=10pt]chapnumber.east)
+        {#1};
+        \fill[
+        overlay,
+        draw=none,
+        line width=0pt,
+        rounded corners=1pt,
+        left color=chapnumberbg,
+        right color=chapnumberbg!10
+        ]
+        ([yshift=-3pt]chapname.north west) rectangle ++(\textwidth,-3pt);
+    \end{tikzpicture}%
+}
+\titleformat{name=\chapter,numberless}[display]
+{\normalfont}
+{}
+{0pt}
+{%
+    \begin{tikzpicture}
+        \node[
+        anchor=west,
+        inner sep=0pt,
+        outer sep=0pt,
+        text width=\textwidth,
+        font=\bfseries\LARGE
+        ]
+        (chaptitle)
+        {#1};
+        \fill[
+        overlay,
+        draw=none,
+        line width=0pt,
+        rounded corners=1pt,
+        left color=chapnumberbg,
+        right color=chapnumberbg!10
+        ]
+        ([yshift=-3pt]chaptitle.south west) rectangle ++(\textwidth,-3pt);
+    \end{tikzpicture}%
+}
+\titlespacing{\chapter}{0pt}{-40pt}{1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.5}
+\pagestyle{fancy}
+% \maketitle
+\includepdf[]{cover.pdf}
+\setcounter{tocdepth}{2}
+\large
+
+\thispagestyle{empty}
+\begin{justify}
+
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\chapter{GIỚI THIỆU}
+\setcounter{page}{1}
+\input{content/gioi_thieu}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ĐỘ TIN CẬY (RELIABILITY)}
+\input{content/reliability}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ĐỘ BỀN VỮNG (ROBUSTNESS)}
+\input{content/robustness}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{TÍNH MINH BẠCH (EXPLAINABILITY)}
+\input{content/explainability}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{THIÊN VỊ/CÔNG BẰNG (BIAS/FAIRNESS)}
+\input{content/fairness}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{BẢO VỆ DỮ LIỆU CÁ NHÂN (PRIVACY)}
+\input{content/privacy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{TÁC ĐỘNG XÃ HỘI LÊN NHÓM YẾU THẾ}
+\input{content/social-impact}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{KIẾN TRÚC HỆ THỐNG ĐỀ XUẤT}
+\input{content/kientruc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{KẾT LUẬN}
+\input{content/ketluan}
+
+% \clearpage
+% \newpage
+% \vspace{0.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{justify}
+\end{spacing}
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,66 @@
+Tính công bằng (Fairness) là một trong những yêu cầu cốt lõi của các hệ thống trí tuệ nhân tạo đáng tin cậy (Trustworthy AI). Một hệ thống được xem là công bằng khi các quyết định hoặc dự đoán của nó không gây bất lợi cho bất kỳ cá nhân hay nhóm người dùng nào dựa trên các đặc điểm nhân khẩu học, điều kiện kinh tế – xã hội, giới tính, độ tuổi hoặc nguồn gốc ngôn ngữ \cite{ferrara2023_bias_ai}.
+
+Đối với đề tài chatbot phát hiện lừa đảo điện thoại cho người cao tuổi, nguy cơ xuất hiện thiên vị là đặc biệt đáng quan tâm bởi đối tượng sử dụng chính là nhóm người dùng yếu thế, có sự đa dạng lớn về vùng miền, trình độ công nghệ và điều kiện sống. Nếu không được thiết kế và đánh giá cẩn thận, hệ thống có thể vô tình tạo ra sự bất bình đẳng trong khả năng tiếp cận và mức độ bảo vệ giữa các nhóm người dùng khác nhau.
+
+\section{Các rủi ro về thiên vị}
+\subsection{Thiên vị phương ngữ và vùng miền}
+Một trong những nguồn thiên vị phổ biến nhất trong các hệ thống xử lý ngôn ngữ tiếng Việt là thiên vị liên quan đến phương ngữ và đặc điểm vùng miền. Nhiều công trình cho thấy các bộ dữ liệu hiện có vẫn chưa bao phủ đầy đủ sự khác biệt ngôn ngữ giữa các địa phương, trong khi các mô hình nhận dạng giọng nói thường suy giảm hiệu năng khi xử lý các biến thể phương ngữ ngoài dữ liệu huấn luyện \cite{nguyen2024_vimd}. Điều này dẫn đến việc mô hình có khả năng xử lý tốt các giọng nói chuẩn nhưng lại gặp khó khăn khi tiếp nhận các biến thể ngôn ngữ địa phương.
+
+Đối với người cao tuổi sinh sống tại vùng nông thôn, miền núi hoặc khu vực có đặc trưng phương ngữ mạnh, hệ thống nhận dạng giọng nói có thể ghi nhận sai nội dung cuộc hội thoại do khác biệt về phát âm, ngữ điệu hoặc từ vựng địa phương. Những sai lệch xuất hiện ngay từ giai đoạn chuyển đổi giọng nói thành văn bản sẽ lan truyền sang các bước phân tích tiếp theo, làm giảm đáng kể độ chính xác của quá trình phát hiện lừa đảo.
+
+Về bản chất, đây không chỉ là một vấn đề kỹ thuật mà còn là một vấn đề công bằng trong AI. Nếu hệ thống hoạt động hiệu quả đối với người dùng tại các đô thị lớn nhưng lại suy giảm hiệu năng đối với người dùng ở vùng sâu vùng xa, thì lợi ích của công nghệ không được phân phối đồng đều giữa các nhóm dân cư. Điều này đi ngược lại mục tiêu xây dựng các hệ thống AI phục vụ cộng đồng một cách công bằng và toàn diện.
+
+\subsection{Thiên vị kinh tế – xã hội}
+Bên cạnh yếu tố ngôn ngữ, sự khác biệt về điều kiện kinh tế – xã hội cũng có thể tạo ra những dạng thiên vị đáng kể trong quá trình triển khai hệ thống.
+
+Nhiều giải pháp AI hiện nay được phát triển với giả định rằng người dùng sở hữu điện thoại thông minh, có kết nối Internet ổn định và có khả năng sử dụng các ứng dụng số. Tuy nhiên, trên thực tế, một bộ phận không nhỏ người cao tuổi vẫn sử dụng điện thoại phổ thông hoặc có mức độ tiếp cận công nghệ hạn chế. Các khảo sát về khoảng cách số cho thấy khả năng tiếp cận công nghệ và mức độ thành thạo kỹ năng số khác biệt đáng kể giữa các nhóm dân cư, đặc biệt là người cao tuổi và những người có điều kiện kinh tế – xã hội hạn chế \cite{charness2022_digitaldivide, friemel2016_digitaldivide}.
+
+Nếu chatbot chỉ được triển khai dưới dạng ứng dụng di động trên nền tảng smartphone, hệ thống có thể vô tình loại trừ chính những nhóm đối tượng dễ bị tổn thương nhất khỏi phạm vi bảo vệ của mình. Khi đó, lợi ích của công nghệ chỉ tập trung vào nhóm người dùng có điều kiện kinh tế và khả năng tiếp cận công nghệ tốt hơn, trong khi những người có nguy cơ cao lại không nhận được sự hỗ trợ tương xứng.
+
+Từ góc độ đạo đức AI, đây được xem là một dạng bất bình đẳng trong khả năng tiếp cận công nghệ (digital inequality), có thể làm gia tăng khoảng cách số giữa các nhóm dân cư khác nhau.
+
+\subsection{Thiên vị giới tính}
+Thiên vị giới tính là một dạng thiên vị thường xuất hiện trong các hệ thống học máy khi dữ liệu huấn luyện phản ánh không cân bằng các đặc điểm hành vi giữa nam và nữ.
+Trong bối cảnh lừa đảo qua điện thoại, các hình thức tấn công thường được thiết kế nhằm khai thác những điểm yếu tâm lý khác nhau giữa các nhóm đối tượng. Chẳng hạn, các vụ lừa đảo tình cảm trực tuyến thường nhắm đến phụ nữ lớn tuổi, trong khi các chiêu trò đầu tư tài chính hoặc cơ hội kinh doanh hấp dẫn lại thường hướng đến nam giới. Nếu tập dữ liệu huấn luyện phản ánh không đầy đủ các dạng hành vi này hoặc bị lệch về một giới tính cụ thể, hệ thống có thể học được những mối liên hệ sai lệch giữa giới tính và nguy cơ lừa đảo.
+
+Hệ quả là chatbot có thể đánh giá mức độ rủi ro không đồng đều giữa các nhóm người dùng hoặc đưa ra các dự đoán dựa trên những khuôn mẫu xã hội (stereotypes) thay vì các bằng chứng thực tế xuất hiện trong nội dung cuộc gọi. Điều này làm suy giảm tính khách quan và công bằng của hệ thống.
+
+\subsection{Thiên vị ngôn ngữ}
+Việt Nam là quốc gia đa dân tộc với sự tồn tại của nhiều ngôn ngữ và phương thức giao tiếp khác nhau. Tuy nhiên, phần lớn các mô hình xử lý ngôn ngữ hiện nay được xây dựng chủ yếu trên dữ liệu tiếng Việt phổ thông.
+Nếu tập dữ liệu huấn luyện không bao gồm các ngôn ngữ hoặc biến thể ngôn ngữ được sử dụng trong cộng đồng dân tộc thiểu số, hệ thống sẽ xuất hiện các “điểm mù” trong quá trình phân tích. Những cuộc gọi được thực hiện bằng tiếng Hoa, tiếng Khmer hoặc các ngôn ngữ dân tộc khác có thể không được xử lý chính xác hoặc thậm chí không thể được phân tích bởi hệ thống.
+
+Sự thiếu hụt dữ liệu đa ngôn ngữ không chỉ làm giảm phạm vi ứng dụng của chatbot mà còn tạo ra nguy cơ phân biệt đối xử gián tiếp đối với các cộng đồng thiểu số. Trong bối cảnh AI ngày càng được sử dụng trong các dịch vụ công cộng, đây là một vấn đề cần được đặc biệt quan tâm.
+
+\subsection{Thiên vị tuổi tác}
+Do đối tượng sử dụng chính của hệ thống là người cao tuổi, nguy cơ xuất hiện thiên vị tuổi tác cần được xem xét một cách nghiêm túc.
+Hiện nay, phần lớn dữ liệu ngôn ngữ trên Internet được tạo ra bởi người trẻ hoặc người trưởng thành trong độ tuổi lao động. Các mô hình ngôn ngữ lớn thường được huấn luyện trên những nguồn dữ liệu này, dẫn đến việc chúng quen thuộc hơn với cách diễn đạt hiện đại, tốc độ nói nhanh và các mẫu giao tiếp phổ biến trong môi trường số.
+
+Ngược lại, người cao tuổi thường có xu hướng sử dụng các cấu trúc câu dài hơn, tốc độ nói chậm hơn và sử dụng nhiều từ ngữ mang tính thế hệ hoặc địa phương. Nếu mô hình không được huấn luyện trên các ngữ liệu đại diện cho nhóm người dùng này, hệ thống có thể diễn giải sai nội dung cuộc trò chuyện hoặc đánh giá nhầm các đặc điểm giao tiếp bình thường thành dấu hiệu bất thường.
+Điều này có thể dẫn đến việc gia tăng tỷ lệ cảnh báo sai (false positive) hoặc làm giảm độ chính xác của chatbot đối với chính nhóm đối tượng mà hệ thống được thiết kế để bảo vệ.
+
+\section{Giải pháp giảm thiểu thiên vị và đảm bảo tính công bằng}
+Để đảm bảo nguyên tắc Fairness trong hệ thống chatbot phát hiện lừa đảo điện thoại cho người cao tuổi, việc giảm thiểu thiên vị cần được thực hiện xuyên suốt toàn bộ vòng đời phát triển hệ thống, từ giai đoạn thu thập dữ liệu, huấn luyện mô hình cho đến triển khai và giám sát sau vận hành.
+
+Trước hết, hệ thống triển khai DialectNormalizer với một từ điển hơn 110 mục từ (\texttt{DIALECT\_MAP}) ánh xạ các từ địa phương miền Trung và miền Nam sang dạng phổ thông. Từ điển này bao phủ các phương ngữ đặc trưng của miền Trung (như "mô" $\rightarrow$ "đâu", "răng" $\rightarrow$ "sao", "tê" $\rightarrow$ "kia") và miền Nam (như "hổng" $\rightarrow$ "không", "ổng" $\rightarrow$ "ông ấy", "thiệt" $\rightarrow$ "thật"), giúp giảm thiểu thiên vị phương ngữ trong quá trình xử lý đầu vào. Cơ chế bảo vệ danh từ riêng được tích hợp để tránh làm thay đổi tên người hoặc địa danh: các từ trong \texttt{DIALECT\_MAP} nếu viết hoa chữ cái đầu ở giữa câu sẽ không bị thay thế (ví dụ tên "Chi" ở giữa câu không thành "gì"). Trường hợp từ viết hoa ở đầu câu ("Chi rứa?"), hệ thống vẫn chuẩn hóa nhưng giữ nguyên chữ hoa chữ cái đầu ("Gì rứa?"), vì khả năng cao đây là từ phương ngữ đầu câu thay vì tên riêng.
+
+Bên cạnh đó, hệ thống triển khai XungHoDetector với bảng ánh xạ 33 đại từ nhân xưng (\texttt{XUNG\_HO\_MAP}) và bảy mẫu phát hiện khác nhau. Thành phần này xác định cách xưng hô phù hợp dựa trên đầu vào của người dùng và đảm bảo phản hồi sử dụng đúng cặp đại từ tương ứng. Ví dụ, nếu người dùng tự xưng "cháu" và gọi hệ thống là "cô", phản hồi sẽ dùng "cô/cháu". Nếu người dùng nói "Con ơi", hệ thống nhận ra đây là người lớn tuổi và sử dụng cách xưng hô phù hợp "con/..." thông qua cơ chế reverse lookup. Điều này giúp tránh thiên vị về độ tuổi trong giao tiếp -- cùng một nội dung phân tích nhưng được thể hiện với xưng hô phù hợp với từng đối tượng người dùng khác nhau.
+
+Bên cạnh đó, hệ thống triển khai cơ chế detect\_region để xác định vùng miền của người dùng (Bắc, Trung, Nam) dựa trên các dấu hiệu từ vựng trong câu hỏi. Các dấu hiệu nhận biết bao gồm từ cảm thán (ví dụ: "trời ơi", "trời đất ơi" cho miền Nam), từ xưng hô (ví dụ: "tui" cho miền Nam, "qua" cho miền Trung) và các từ phương ngữ đặc trưng. Thông tin vùng miền được lưu lại để hỗ trợ quá trình suy luận, giúp hệ thống điều chỉnh phản hồi phù hợp với đặc điểm ngôn ngữ của từng khu vực.
+
+Ngoài ra, khả năng tiếp cận công nghệ cần được xem là một tiêu chí thiết kế quan trọng. Thay vì chỉ triển khai chatbot trên nền tảng điện thoại thông minh, hệ thống nên hỗ trợ nhiều kênh tương tác khác nhau như tin nhắn SMS, cuộc gọi tự động hoặc các dịch vụ USSD nhằm mở rộng phạm vi tiếp cận đến những người không có điều kiện sử dụng smartphone hoặc Internet tốc độ cao.
+
+Trong quá trình xây dựng mô hình phân loại, các thuộc tính nhạy cảm như giới tính, dân tộc hoặc vị trí địa lý không nên được sử dụng như những yếu tố quyết định trực tiếp đến kết quả đánh giá. Mục tiêu của hệ thống là nhận diện các dấu hiệu lừa đảo xuất hiện trong nội dung cuộc gọi thay vì dựa trên đặc điểm cá nhân của người sử dụng. Việc loại bỏ các đặc trưng có khả năng dẫn đến phân biệt đối xử là một bước quan trọng nhằm đảm bảo tính khách quan của mô hình.
+
+Ngoài ra, hệ thống cần được kiểm tra định kỳ thông qua các quy trình kiểm toán công bằng (Fairness Audit). Việc đánh giá không chỉ dựa trên độ chính xác tổng thể mà còn phải xem xét hiệu suất riêng biệt đối với từng nhóm người dùng. Các chỉ số như tỷ lệ cảnh báo sai (False Positive Rate), tỷ lệ bỏ sót (False Negative Rate) và độ chính xác phát hiện cần được theo dõi trên các nhóm nhân khẩu học khác nhau. Nếu hệ thống cho thấy sự chênh lệch đáng kể giữa các nhóm, chẳng hạn tỷ lệ sai số đối với người dân tộc thiểu số hoặc người sử dụng phương ngữ cao hơn đáng kể so với mức trung bình, mô hình cần được hiệu chỉnh và huấn luyện lại nhằm khắc phục sự mất cân bằng này.
+
+Thông qua việc kết hợp các biện pháp trên, hệ thống chatbot có thể giảm thiểu đáng kể các nguồn thiên vị tiềm ẩn, từ đó đảm bảo rằng mọi người dùng, bất kể tuổi tác, giới tính, điều kiện kinh tế hay nguồn gốc ngôn ngữ, đều được hưởng mức độ bảo vệ tương đương trước các hình thức lừa đảo qua điện thoại.
+
+\section{Tiêu chí đánh giá}
+Tính công bằng được đánh giá thông qua việc so sánh hiệu năng giữa các nhóm người dùng khác nhau:
+\begin{itemize}
+    \item Nam và nữ.
+    \item Người dùng thành thị và nông thôn.
+    \item Các vùng miền Bắc, Trung và Nam.
+    \item Các nhóm tuổi khác nhau trong tập người cao tuổi.
+\item Sự chênh lệch lớn về độ chính xác giữa các nhóm có thể là dấu hiệu của thiên vị dữ liệu hoặc thiên vị mô hình.
+\end{itemize}
